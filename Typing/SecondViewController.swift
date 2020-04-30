@@ -49,13 +49,26 @@ class SecondViewController: UIViewController {
     
     
     @IBAction func back(_ sender: Any) {
+        
+        let vc1 = self.presentingViewController as! ViewController
+        vc1.count = 0
+        vc1.abc = true
+        vc1.quesCount = 0
+        vc1.usedTime1 = 0
+        vc1.letterCount = 0
+        vc1.timerr = [10,0,0]
+        vc1.stop = false
+        
+        vc1.loadView()
+        vc1.viewDidLoad()
+        
+        
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backtoHome(_ sender: Any) {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    
-
+ 
 
 }

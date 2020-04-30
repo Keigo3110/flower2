@@ -8,17 +8,56 @@
 
 import UIKit
 
+
+
 class Top: UIViewController {
+    
+    let exp = [0,0,1,3,5,7,9,11,17,18,19,20]
+    var level:Int = 0
+    var expPoint2 = 0
+    
+    let userDefaults1 = UserDefaults.standard
     
     @IBOutlet weak var word: UIButton!
     @IBOutlet weak var sentence: UIButton!
     @IBOutlet weak var English: UIButton!
+    @IBOutlet weak var exppp: UILabel!
+    
+   
+    
+    var int = 0
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+       userDefaults1.register(defaults: ["expPoint2" : 0])
+        
+        if expPoint2 >= 1{
+        userDefaults1.set(expPoint2, forKey: "expPoint2")
+        }
+        
+        expPoint2 = userDefaults1.object(forKey: "expPoint2") as! Int
+        
+        levelJudge()
+    
+        
+        exppp.text = String(level)
+        
+        
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    func levelJudge() {
+        for i in 2..<100{
+            if exp[i] > expPoint2{
+               level = i-1
+               return
+            }
+        }
     }
     
     @IBAction func toQustion(_ sender: UIButton) {

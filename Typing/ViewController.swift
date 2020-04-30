@@ -36,8 +36,9 @@ class ViewController: UIViewController {
     var stop = false
     var started = false
     var finish = false
+    var expPoint = 0
+    let kind = ["word","sentence","English"]
     let userDefaults = UserDefaults.standard
-     let kind = ["word","sentence","English"]
     
 
      var timerr: [Int] = [10,0,0]
@@ -59,7 +60,6 @@ class ViewController: UIViewController {
         time.text = String(timerr[0])+":"+String(timerr[1])+String(timerr[2])
         
       
-        
         userDefaults.register(defaults: ["word": [0,0,0]])
                
         userDefaults.register(defaults: ["sentence": [0,0,0]])
@@ -67,6 +67,8 @@ class ViewController: UIViewController {
         userDefaults.register(defaults: ["English": [0,0,0]])
         
           record = userDefaults.object(forKey: kind[choice]) as! [Double]
+        
+        userDefaults.register(defaults:["expPoint" : 0])
                
         
     }
@@ -115,8 +117,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func retryyy(_ sender: Any) {
-        
-        
         
         if started == false{
             count = 0
@@ -210,7 +210,16 @@ class ViewController: UIViewController {
                 }
                 
                 SaveData(hairetsu:record,sort:kind[choice])
-
+                
+                expPoint =  userDefaults.object(forKey: "expPoint") as! Int
+                expPoint += 1
+                
+                SaveExp(point: expPoint)
+                
+                let vc = self.presentingViewController as! Top
+                vc.expPoint2 = userDefaults.object(forKey: "expPoint") as! Int
+                vc.viewDidLoad()
+                
                 good.text = String(record[0])+","+String(record[1])+","+String(record[2])
                 
                  performSegue(withIdentifier: "toSecond", sender: nil)
@@ -239,10 +248,15 @@ class ViewController: UIViewController {
            userDefaults.set(hairetsu, forKey: sort)
        }
     
+    func SaveExp(point:Int){
+        userDefaults.set(point, forKey: "expPoint")
+    }
+    
     
     
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        
     }
     
         

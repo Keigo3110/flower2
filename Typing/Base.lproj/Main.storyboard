@@ -70,12 +70,20 @@
                                     <segue destination="bAR-wl-xb8" kind="presentation" identifier="toTry" modalPresentationStyle="fullScreen" id="wrY-gt-LfD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-AJ-ZIL">
+                                <rect key="frame" x="182" y="124" width="70" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Raa-01-F0s"/>
                     </view>
                     <connections>
                         <outlet property="English" destination="yeq-Ui-Lgc" id="nfz-27-OdL"/>
+                        <outlet property="exppp" destination="AHy-AJ-ZIL" id="W7x-nl-tP0"/>
                         <outlet property="sentence" destination="ASb-9B-kJ4" id="qLJ-Ph-jPM"/>
                         <outlet property="word" destination="65X-Pi-Ruz" id="qYR-7Y-tMa"/>
                     </connections>
@@ -83,7 +91,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLu-EC-DGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="axJ-gK-sC2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-355" y="51"/>
+            <point key="canvasLocation" x="-355.07246376811599" y="50.892857142857139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -217,7 +225,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waP-8J-KSC">
-                                <rect key="frame" x="50" y="488" width="327" height="34"/>
+                                <rect key="frame" x="50" y="468" width="327" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
