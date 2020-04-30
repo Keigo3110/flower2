@@ -11,6 +11,7 @@ import UIKit
 class Try: UIViewController {
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var back: UIButton!
     
 
     override func viewDidLoad() {
@@ -18,5 +19,10 @@ class Try: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var ans: UILabel!
     @IBOutlet weak var backHome: UIButton!
     @IBOutlet weak var retry: UIButton!
+    @IBOutlet weak var shiji: UILabel!
     
     
     
@@ -52,6 +53,8 @@ class ViewController: UIViewController {
        
         self.view.backgroundColor = UIColor.cyan
         
+        shiji.text = "タップしてスタート"
+        shiji.isHidden = false
         Random()
         aaa()
         count = 0
@@ -104,6 +107,7 @@ class ViewController: UIViewController {
         started = true
         stop = true
         retry.setTitle("Stop", for: .normal)
+        shiji.isHidden = true
     }
     
 
@@ -135,6 +139,10 @@ class ViewController: UIViewController {
             myTimer.invalidate()
             stop = false
             retry.setTitle("Retry", for: .normal)
+            field.endEditing(true)
+            shiji.text = "タップして再開"
+            shiji.isHidden = false
+            
         }else if started == true && stop == false{
             count = 0
             abc = true
@@ -149,10 +157,7 @@ class ViewController: UIViewController {
             self.viewDidLoad()
         }
         
-
     }
-    
-   
     
     func judge(){
        
@@ -212,7 +217,11 @@ class ViewController: UIViewController {
                 SaveData(hairetsu:record,sort:kind[choice])
                 
                 expPoint =  userDefaults.object(forKey: "expPoint") as! Int
+                if choice == 0 {
                 expPoint += 1
+                }else{
+                 expPoint += 2
+                }
                 
                 SaveExp(point: expPoint)
                 
