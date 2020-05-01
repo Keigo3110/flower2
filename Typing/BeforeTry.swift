@@ -38,7 +38,7 @@ class BeforeTry: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //    if segue.identifier == "toTry"{

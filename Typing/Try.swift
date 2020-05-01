@@ -33,7 +33,7 @@ class Try: UIViewController {
     let up:[Double] = [100,130,150,170,190,210,220,230,240,250,260]
     let down:[Double] = [0,120,140,160,180,200,210,220,230,240,250]
     
-    var timerr2:[Int] = [0,0,0]
+    var timerr2:[Int] = [60,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
