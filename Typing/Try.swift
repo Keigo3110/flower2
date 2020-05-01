@@ -30,8 +30,8 @@ class Try: UIViewController {
     var rankNum2 = 0
     var upOrDown = 0
     let userDefaults3 = UserDefaults.standard
-    let up:[Double] = [100,120,140,160,180,150,160,170,180,190,200]
-    let down:[Double] = [0,80,90,100,110,120,130,140,150,160,170]
+    let up:[Double] = [100,130,150,170,190,210,220,230,240,250,260]
+    let down:[Double] = [0,120,140,160,180,200,210,220,230,240,250]
     
     var timerr2:[Int] = [0,0,0]
     
