@@ -12,7 +12,7 @@ import UIKit
 
 class Top: UIViewController {
     
-    let exp = [0,0,2,6,12,20,30,42,56,72,90,110]
+    let exp = [0,0,2,6,12,20,30,42,56,72,90,110,1000]
     var level:Int = 0
     var expPoint2 = 0
     
