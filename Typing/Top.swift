@@ -12,7 +12,7 @@ import UIKit
 
 class Top: UIViewController {
     
-    let exp = [0,0,2,6,12,20,30,42,56,72,90,110,1000]
+    let exp = [0,0,50,56,62,120,130,142,156,172,190,210,1000]
     var level:Int = 0
     var expPoint2 = 0
     
@@ -22,12 +22,13 @@ class Top: UIViewController {
     @IBOutlet weak var sentence: UIButton!
     @IBOutlet weak var English: UIButton!
     @IBOutlet weak var exppp: UILabel!
+    @IBOutlet weak var rank: UILabel!
     
-   
+   let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
     
-    var int = 0
+   var rankNumber = 0
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +45,14 @@ class Top: UIViewController {
     
         
         exppp.text = String(level)
+        
+        userDefaults1.register(defaults: ["rankNumber" : 0])
+        if rankNumber >= 1{
+            userDefaults1.set(rankNumber, forKey: "rankNumber")
+        }
+        rankNumber = userDefaults1.object(forKey: "rankNumber") as! Int
+        
+        rank.text = rankName[rankNumber]
         
         
         
@@ -84,6 +93,11 @@ class Top: UIViewController {
             if segue.identifier == "toQuestion3"{
             let nextView = segue.destination as! ViewController
             nextView.choice = 2
-        }
+            }
+            if segue.identifier == "toBeforeTry"{
+                let beforeTryView = segue.destination as! BeforeTry
+                beforeTryView.rankNum = rankNumber
+            }
+            
 }
 }

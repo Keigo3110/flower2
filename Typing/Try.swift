@@ -30,8 +30,10 @@ class Try: UIViewController {
     var rankNum2 = 0
     var upOrDown = 0
     let userDefaults3 = UserDefaults.standard
+    let up:[Double] = [100,120,140,160,180,150,160,170,180,190,200]
+    let down:[Double] = [0,80,90,100,110,120,130,140,150,160,170]
     
-    var timerr2:[Int] = [30,0,0]
+    var timerr2:[Int] = [0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +51,7 @@ class Try: UIViewController {
     
     @objc func timer(){
         if (timerr2[0] == 0 && timerr2[1] == 0 && timerr2[2] == 0) {
-            performSegue(withIdentifier: "toSecond", sender: nil)
+            performSegue(withIdentifier: "toTryResult", sender: nil)
             
         } else {
             if timerr2[2] > 0 {
@@ -75,7 +77,8 @@ class Try: UIViewController {
     
     
     @IBAction func dismiss(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        //myTimer2.invalidate()
     }
     
     @IBAction func EditingDidBegin(_ sender: Any) {
@@ -124,13 +127,16 @@ class Try: UIViewController {
                 
               
                 
-                 let lpm2 = round(60*Double(letterCount2)/usedTime2)
+                 lpm2 = round(60*Double(letterCount2)/usedTime2)
                 
-                if lpm2 >= 110{
+                 rankNum2 = userDefaults3.object(forKey: "rankNum2") as! Int
+                
+                if lpm2 >= up[rankNum2]{
                     rankNum2 += 1
                     SaveRankNum2(num: rankNum2)
                     upOrDown = 0
-                }else if lpm2 >= 90{
+                }else if lpm2 >= down[rankNum2]{
+                    SaveRankNum2(num: rankNum2)
                     upOrDown = 1
                 }else{
                     rankNum2 -= 1
@@ -138,6 +144,11 @@ class Try: UIViewController {
                     upOrDown = 2
                     
                 }
+                
+                let top = self.presentingViewController?.presentingViewController as! Top
+                top.rankNumber = userDefaults3.object(forKey: "rankNum2") as! Int
+                top.viewDidLoad()
+                
                 
                 
                 
@@ -161,6 +172,7 @@ class Try: UIViewController {
     
     func SaveRankNum2(num:Int){
         userDefaults3.set(num, forKey: "rankNum2")
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

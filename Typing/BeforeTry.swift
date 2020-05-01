@@ -13,22 +13,21 @@ class BeforeTry: UIViewController {
     @IBOutlet weak var danni: UILabel!
     @IBOutlet weak var jouken1: UILabel!
     @IBOutlet weak var jouken2: UILabel!
-    @IBOutlet weak var yes: UIButton!
     @IBOutlet weak var no: UIButton!
     
     var rankNum = 0
-    let rank = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
+    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
     
-    let up = ["lpm100以上","lpm110以上","lpm120以上","lpm130以上","lpm140以上","lpm150以上","lpm160以上","lpm170以上","lpm180以上","lpm190以上","lpm200以上"]
+    let up = ["lpm100以上","lpm120以上","lpm140以上","lpm160以上","lpm140以上","lpm150以上","lpm160以上","lpm170以上","lpm180以上","lpm190以上","lpm200以上"]
     
-    let down = ["なし","lpm80以下","lpm90以下","lpm100以下","lpm120以下","lpm130以下","lpm140以下","lpm150以下","lpm160以下","lpm170以下","lpm180以上"]
+    let down = ["なし","lpm80未満","lpm90未満","lpm100未満","lpm120未満","lpm130未満","lpm140未満","lpm150未満","lpm160未満","lpm170未満","lpm180未満"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        danni.text = rank[rankNum]
+        danni.text = rankName[rankNum]
         jouken1.text = up[rankNum]
         jouken2.text = down[rankNum]
         
@@ -39,9 +38,14 @@ class BeforeTry: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func YesAction(_ sender: Any) {
-        
-    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    if segue.identifier == "toTry"{
+//        let tryView = segue.destination as! Try
+//        tryView.rankNum2 =
+//    }
+    
     
 
 }

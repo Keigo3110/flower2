@@ -66,13 +66,20 @@
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aVO-9g-Fow" kind="presentation" identifier="toTry1" id="vzs-AA-UUf"/>
+                                    <segue destination="aVO-9g-Fow" kind="presentation" identifier="toBeforeTry" id="vzs-AA-UUf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-AJ-ZIL">
-                                <rect key="frame" x="182" y="124" width="70" height="53"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="レベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-AJ-ZIL">
+                                <rect key="frame" x="233" y="124" width="70" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="段位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgs-6m-EUP">
+                                <rect key="frame" x="92" y="132" width="62" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -83,6 +90,7 @@
                     <connections>
                         <outlet property="English" destination="yeq-Ui-Lgc" id="nfz-27-OdL"/>
                         <outlet property="exppp" destination="AHy-AJ-ZIL" id="W7x-nl-tP0"/>
+                        <outlet property="rank" destination="Mgs-6m-EUP" id="ZSj-i7-cPx"/>
                         <outlet property="sentence" destination="ASb-9B-kJ4" id="qLJ-Ph-jPM"/>
                         <outlet property="word" destination="65X-Pi-Ruz" id="qYR-7Y-tMa"/>
                     </connections>
@@ -342,11 +350,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV0-kN-Bx9">
+                                <rect key="frame" x="131" y="657" width="188" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="ホームへ">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="goHome:" destination="BVh-MS-DR3" eventType="touchUpInside" id="G6P-Ro-58P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="MIQ-te-vBf"/>
                     </view>
                     <connections>
+                        <outlet property="goHome" destination="HV0-kN-Bx9" id="QKn-Zm-9Y0"/>
                         <outlet property="gouhi" destination="gaQ-Lx-QgP" id="pst-C7-PSd"/>
                         <outlet property="lpmLabel" destination="zYH-iK-u9K" id="G0a-Iw-IBW"/>
                         <outlet property="missLabel" destination="iVC-yv-8el" id="jVM-SF-53z"/>
@@ -415,8 +436,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="YesAction:" destination="aVO-9g-Fow" eventType="touchUpInside" id="tFo-LD-zuk"/>
-                                    <segue destination="bAR-wl-xb8" kind="presentation" identifier="toTry2" modalPresentationStyle="fullScreen" id="HxB-tS-9eJ"/>
+                                    <segue destination="bAR-wl-xb8" kind="presentation" identifier="toTry" modalPresentationStyle="fullScreen" id="P8q-pW-Bn0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZ1-7n-qzh">
@@ -446,7 +466,6 @@
                         <outlet property="jouken1" destination="GQz-h4-4NP" id="ydr-Vn-wUQ"/>
                         <outlet property="jouken2" destination="Icw-z4-vxs" id="mRR-kW-6qG"/>
                         <outlet property="no" destination="lZ1-7n-qzh" id="Nnb-EV-KMP"/>
-                        <outlet property="yes" destination="kSa-ff-zDr" id="6GW-a8-7ST"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="di6-rW-95f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

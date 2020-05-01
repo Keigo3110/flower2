@@ -79,6 +79,7 @@ class ViewController: UIViewController {
     @objc func timer(){
         if (timerr[0] == 0 && timerr[1] == 0 && timerr[2] == 0) {
             finish = true
+            myTimer.invalidate()
             performSegue(withIdentifier: "toSecond", sender: nil)
             
         } else {
@@ -200,7 +201,7 @@ class ViewController: UIViewController {
                 
               
                 
-                 let lpm = round(60*Double(letterCount)/usedTime1)
+                  lpm = round(60*Double(letterCount)/usedTime1)
                 
                 
                 if lpm >= record[0]{

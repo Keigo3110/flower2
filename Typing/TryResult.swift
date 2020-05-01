@@ -14,6 +14,7 @@ class TryResult: UIViewController {
     @IBOutlet weak var lpmLabel: UILabel!
     @IBOutlet weak var usedTimeLabel: UILabel!
     @IBOutlet weak var missLabel: UILabel!
+    @IBOutlet weak var goHome: UIButton!
     
     
     
@@ -36,6 +37,11 @@ class TryResult: UIViewController {
         missLabel.text = String(missNum)
     }
     
+    @IBAction func goHome(_ sender: Any) {
+        self.presentingViewController?.presentingViewController?.presentingViewController?
+            .dismiss(animated: true, completion: nil)
+      
+    }
     
 
 }
