@@ -14,21 +14,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var good: UILabel!
     @IBOutlet weak var coun: UILabel!
-    @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var ans: UILabel!
     @IBOutlet weak var backHome: UIButton!
     @IBOutlet weak var retry: UIButton!
     @IBOutlet weak var shiji: UILabel!
+   
     
     
     
     
     
-    
+    var question = ""
     var count = 0
     var abc = true
     var quesCount = 0
     var myTimer: Timer!
+    var myTimer2: Timer!
     var usedTime1 :Double = 0
     var letterCount = 0
     var record:[Double] = [0,0,0]
@@ -38,11 +40,12 @@ class ViewController: UIViewController {
     var started = false
     var finish = false
     var expPoint = 0
-    let kind = ["word","sentence","English"]
+    let kind = ["word","sentence","English","anki"]
     let userDefaults = UserDefaults.standard
     
 
-     var timerr: [Int] = [10,0,0]
+     var timerr: [Int] = [30,0,0]
+    var timerr2:Double = 0.1
     @IBOutlet weak var time: UILabel!
     
     
@@ -53,11 +56,13 @@ class ViewController: UIViewController {
        
         self.view.backgroundColor = UIColor.cyan
         
+        
         shiji.text = "タップしてスタート"
         shiji.isHidden = false
         Random()
         aaa()
         count = 0
+        questionLabel.text = question
         retry.setTitle("Retry", for: .normal)
         
         time.text = String(timerr[0])+":"+String(timerr[1])+String(timerr[2])
@@ -69,18 +74,23 @@ class ViewController: UIViewController {
                
         userDefaults.register(defaults: ["English": [0,0,0]])
         
+        userDefaults.register(defaults: ["anki": [0,0,0]])
+        
           record = userDefaults.object(forKey: kind[choice]) as! [Double]
         
         userDefaults.register(defaults:["expPoint" : 0])
                
         
     }
+   
     
     @objc func timer(){
+        
         if (timerr[0] == 0 && timerr[1] == 0 && timerr[2] == 0) {
             finish = true
             myTimer.invalidate()
             performSegue(withIdentifier: "toSecond", sender: nil)
+            
             
         } else {
             if timerr[2] > 0 {
@@ -100,7 +110,20 @@ class ViewController: UIViewController {
             }
             time.text = String(timerr[0]) + ":" + String(timerr[1])+String(timerr[2])
         }
+
+        
     }
+    
+    @objc func timer2(){
+        timerr2 += 0.1
+        
+        if (timerr2 >= 1){
+            myTimer2.invalidate()
+            questionLabel.text = ""
+            timerr2 = 0
+        }
+    }
+    
    
 
     @IBAction func EditingDidBegin(_ sender: Any) {
@@ -109,11 +132,18 @@ class ViewController: UIViewController {
         stop = true
         retry.setTitle("Stop", for: .normal)
         shiji.isHidden = true
+        
+        if(choice == 3){
+            myTimer2 = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer2) , userInfo: nil, repeats: true)
+        }
+        
+        
     }
     
 
     @IBAction func EditingChanged(_ sender: Any) {
         judge()
+        
         
     }
     
@@ -129,7 +159,7 @@ class ViewController: UIViewController {
             quesCount = 0
             usedTime1 = 0
             letterCount = 0
-            timerr = [10,0,0]
+            timerr = [30,0,0]
             stop = false
             
             
@@ -150,7 +180,7 @@ class ViewController: UIViewController {
             quesCount = 0
             usedTime1 = 0
             letterCount = 0
-            timerr = [10,0,0]
+            timerr = [30,0,0]
             stop = false
             
             
@@ -164,16 +194,21 @@ class ViewController: UIViewController {
        
         
     if quesCount<1{
-        if field.text! == question.text!{
-            Random()
+        if field.text! == question{
             abc = true
             field.text = ""
             quesCount += 1
-            letterCount += question.text!.count
-        }else if field.text! == question.text!.prefix(field.text!.count){
+            letterCount += question.count
+            
+            if (choice == 3){
+             myTimer2 = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer2) , userInfo: nil, repeats: true)
+            }
+            Random()
+            questionLabel.text = question
+        }else if field.text! == question.prefix(field.text!.count){
             good.text = "Good!"
             abc = true
-           ans.text = String(question.text!.suffix(question.text!.count-field.text!.count))
+           ans.text = String(question.suffix(question.count-field.text!.count))
             
             
             
@@ -187,17 +222,17 @@ class ViewController: UIViewController {
                 abc = false
            }
         }else{
-            if field.text! == question.text!{
+            if field.text! == question{
                 
                
                 field.text = ""
                 ans.text = ""
                 quesCount = 0
-                letterCount += question.text!.count
+                letterCount += question.count
                 myTimer.invalidate()
                 
                 
-                usedTime1 = 10 - Double(timerr[0]) - Double(timerr[1])/10 - Double(timerr[2])/100
+                usedTime1 = 30 - Double(timerr[0]) - Double(timerr[1])/10 - Double(timerr[2])/100
                 
               
                 
@@ -234,10 +269,10 @@ class ViewController: UIViewController {
                 
                  performSegue(withIdentifier: "toSecond", sender: nil)
                 
-            }else if field.text! == question.text!.prefix(field.text!.count){
+            }else if field.text! == question.prefix(field.text!.count){
              good.text = "Good!"
              abc = true
-            ans.text = String(question.text!.suffix(question.text!.count-field.text!.count))
+            ans.text = String(question.suffix(question.count-field.text!.count))
             
              
              
@@ -299,17 +334,17 @@ class ViewController: UIViewController {
         if choice == 0{
            switch (randomNumber) {
            case 1:
-               question.text = "ああ"
+               question = "ああ"
                
                break
            case 2:
-               question.text = "いい"
+               question = "いい"
                break
            case 3:
-               question.text = "うう"
+               question = "うう"
                break
            default:
-               question.text = "ええ"
+               question = "ええ"
                break
            }
         }
@@ -318,17 +353,17 @@ class ViewController: UIViewController {
         if choice == 1{
            switch (randomNumber) {
            case 1:
-               question.text = "あいうえお"
+               question = "あいうえお"
                
                break
            case 2:
-               question.text = "かきくけこ"
+               question = "かきくけこ"
                break
            case 3:
-               question.text = "さしすせそ"
+               question = "さしすせそ"
                break
            default:
-               question.text = "もはじすあ"
+               question = "もはじすあ"
                break
            }
         }
@@ -336,21 +371,39 @@ class ViewController: UIViewController {
         if choice == 2{
            switch (randomNumber) {
            case 1:
-               question.text = "word"
+               question = "word"
                
                break
            case 2:
-               question.text = "take"
+               question = "take"
                break
            case 3:
-               question.text = "and"
+               question = "and"
                break
            default:
-               question.text = "look"
+               question = "look"
                break
            }
         }
-        ans.text = question.text!
+        if choice == 3{
+           switch (randomNumber) {
+           case 1:
+               question = "あかさたな"
+               
+               break
+           case 2:
+               question = "いきしちに"
+               break
+           case 3:
+               question = "うくすつぬ"
+               break
+           default:
+               question = "えけせてね"
+               break
+           }
+        }
+        
+        ans.text = question
            
            
        }

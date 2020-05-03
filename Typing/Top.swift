@@ -21,6 +21,7 @@ class Top: UIViewController {
     @IBOutlet weak var word: UIButton!
     @IBOutlet weak var sentence: UIButton!
     @IBOutlet weak var English: UIButton!
+    @IBOutlet weak var anki: UIButton!
     @IBOutlet weak var exppp: UILabel!
     @IBOutlet weak var rank: UILabel!
     
@@ -32,7 +33,6 @@ class Top: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
        userDefaults1.register(defaults: ["expPoint2" : 0])
         
         if expPoint2 >= 1{
@@ -81,6 +81,11 @@ class Top: UIViewController {
         performSegue(withIdentifier: "toQuestion3", sender: English)
     }
     
+    @IBAction func toQuestion4(_ sender: UIButton) {
+        performSegue(withIdentifier: "toQuestion4", sender: anki)
+    }
+    
+    
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "toQuestion1"{
                 let nextView = segue.destination as! ViewController
@@ -93,6 +98,11 @@ class Top: UIViewController {
             if segue.identifier == "toQuestion3"{
             let nextView = segue.destination as! ViewController
             nextView.choice = 2
+            }
+            if segue.identifier == "toQuestion4"{
+                let nextView = segue.destination as! ViewController
+                nextView.choice = 3
+                
             }
             if segue.identifier == "toBeforeTry"{
                 let beforeTryView = segue.destination as! BeforeTry

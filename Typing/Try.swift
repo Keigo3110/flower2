@@ -30,10 +30,10 @@ class Try: UIViewController {
     var rankNum2 = 0
     var upOrDown = 0
     let userDefaults3 = UserDefaults.standard
-    let up:[Double] = [100,130,150,170,190,210,220,230,240,250,260]
-    let down:[Double] = [0,120,140,160,180,200,210,220,230,240,250]
+    let up:[Double] = [100,130,150,170,190,210,220,230,240,250,260,270,280,290,300,310,320]
+    let down:[Double] = [0,120,140,160,180,200,210,220,230,240,250,260,270,280,290,300,310]
     
-    var timerr2:[Int] = [60,0,0]
+    var timerr2:[Int] = [30,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
