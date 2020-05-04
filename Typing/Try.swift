@@ -29,9 +29,11 @@ class Try: UIViewController {
     var lpm2:Double = 0
     var rankNum2 = 0
     var upOrDown = 0
+    var TimerStartOrNot = false
     let userDefaults3 = UserDefaults.standard
     let up:[Double] = [100,130,150,170,190,210,220,230,240,250,260,270,280,290,300,310,320]
     let down:[Double] = [0,120,140,160,180,200,210,220,230,240,250,260,270,280,290,300,310]
+    
     
     var timerr2:[Int] = [30,0,0]
     
@@ -47,6 +49,10 @@ class Try: UIViewController {
         Random2()
         
         userDefaults3.register(defaults: ["rankNum2" : 0])
+        
+        SaveRankNum2(num: rankNum2)
+        
+        rankNum2 = userDefaults3.object(forKey: "rankNum2") as! Int
     }
     
     @objc func timer(){
@@ -77,13 +83,28 @@ class Try: UIViewController {
     
     
     @IBAction func dismiss(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        //myTimer2.invalidate()
+        let top = self.presentingViewController?.presentingViewController as! Top
+        
+        if rankNum2 >= 1{
+        rankNum2 = userDefaults3.object(forKey: "rankNum2") as! Int
+        rankNum2 -= 1
+        SaveRankNum2(num: rankNum2)
+        
+        top.rankNumber = userDefaults3.object(forKey: "rankNum2") as! Int
+        top.viewDidLoad()
+        }
+        top.dismiss(animated: true, completion: nil)
+        
+        if TimerStartOrNot == true{
+        myTimer2.invalidate()
+        }
+        
     }
     
     @IBAction func EditingDidBegin(_ sender: Any) {
         shiji.isHidden = true
         myTimer2 = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector:#selector(timer) , userInfo: nil, repeats: true)
+        TimerStartOrNot = true
     }
     
     @IBAction func EditingChanged(_ sender: Any) {
@@ -129,7 +150,7 @@ class Try: UIViewController {
                 
                  lpm2 = round(60*Double(letterCount2)/usedTime2)
                 
-                 rankNum2 = userDefaults3.object(forKey: "rankNum2") as! Int
+                 
                 
                 if lpm2 >= up[rankNum2]{
                     rankNum2 += 1

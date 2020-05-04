@@ -15,6 +15,7 @@ class Top: UIViewController {
     let exp = [0,0,50,56,62,120,130,142,156,172,190,210,1000]
     var level:Int = 0
     var expPoint2 = 0
+    var tryCount = 0
     
     let userDefaults1 = UserDefaults.standard
     
@@ -24,15 +25,34 @@ class Top: UIViewController {
     @IBOutlet weak var anki: UIButton!
     @IBOutlet weak var exppp: UILabel!
     @IBOutlet weak var rank: UILabel!
+    @IBOutlet weak var Time: UILabel!
+    @IBOutlet weak var toTry: UIButton!
+    @IBOutlet weak var minus: UILabel!
+    
+    let UD = UserDefaults.standard
+    
     
    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
     
    var rankNumber = 0
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        judgeDate()
+        userDefaults1.register(defaults: ["tryCount" : 0])
+        
+        if tryCount >= 1{
+            userDefaults1.set(tryCount, forKey: "tryCount")
+        }
+        tryCount = userDefaults1.object(forKey: "tryCount") as! Int
+        
+        Time.text = String(tryCount)
+            
        userDefaults1.register(defaults: ["expPoint2" : 0])
         
         if expPoint2 >= 1{
@@ -46,14 +66,17 @@ class Top: UIViewController {
         
         exppp.text = String(level)
         
+        
+        
         userDefaults1.register(defaults: ["rankNumber" : 0])
         if rankNumber >= 1{
             userDefaults1.set(rankNumber, forKey: "rankNumber")
+        }else{
+            userDefaults1.set(0, forKey: "rankNumber")
         }
         rankNumber = userDefaults1.object(forKey: "rankNumber") as! Int
         
-        rank.text = rankName[rankNumber]
-        
+       rank.text = rankName[rankNumber]
         
         
 
@@ -85,6 +108,31 @@ class Top: UIViewController {
         performSegue(withIdentifier: "toQuestion4", sender: anki)
     }
     
+    @IBAction func toBeforeTry(_ sender: UIButton) {
+        if tryCount <= 2 {
+            performSegue(withIdentifier: "toBeforeTry", sender: toTry)
+        }else{
+            let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "昇段試験は1日3回までです。", preferredStyle:  UIAlertController.Style.alert)
+            
+                        let defaultAction: UIAlertAction = UIAlertAction(title: "制限解除", style: UIAlertAction.Style.default, handler:{
+            
+                            (action: UIAlertAction!) -> Void in
+                            print("OK")
+                        })
+            
+                        let cancelAction: UIAlertAction = UIAlertAction(title: "戻る", style: UIAlertAction.Style.cancel, handler: {
+                            (action: UIAlertAction!) -> Void in
+                            print("Cancel")
+                        })
+            
+                        alert.addAction(cancelAction)
+                        alert.addAction(defaultAction)
+            
+                        present(alert, animated: true, completion:  nil)
+            
+    }
+    }
+    
     
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "toQuestion1"{
@@ -107,7 +155,56 @@ class Top: UIViewController {
             if segue.identifier == "toBeforeTry"{
                 let beforeTryView = segue.destination as! BeforeTry
                 beforeTryView.rankNum = rankNumber
+                beforeTryView.tryCount = tryCount
             }
             
 }
+    func judgeDate(){
+        let calendar = Calendar.current
+        let nowDay = Date(timeIntervalSinceNow: 60 * 60 * 9)
+        var judge = Bool()
+        
+        if UD.object(forKey: "today") != nil{
+            let pastDay = UD.object(forKey: "today") as! Date
+            let now = calendar.component(.day, from: nowDay)
+            let past = calendar.component(.day, from: pastDay)
+            
+            //日にちが変わっていた場合
+            if now != past {
+                judge = true
+            }else{
+                judge = false
+            }
+        }//if
+        //初回実行のみelse
+        else{
+            judge = true
+            UD.set(nowDay, forKey:  "today")
+        }
+        
+        if judge == true{
+            judge = false
+            tryCount = 0
+            userDefaults1.set(tryCount, forKey: "tryCount")
+        }
+        
+    }
+
+    @IBAction func minus(_ sender: Any) {
+        tryCount -= 1
+        Time.text = String(tryCount)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

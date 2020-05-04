@@ -66,7 +66,7 @@
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aVO-9g-Fow" kind="presentation" identifier="toBeforeTry" id="vzs-AA-UUf"/>
+                                    <action selector="toBeforeTry:" destination="a6d-IT-8Zp" eventType="touchUpInside" id="P6f-LW-LtA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="レベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-AJ-ZIL">
@@ -96,17 +96,36 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion4" modalPresentationStyle="fullScreen" id="sxM-dm-68t"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="挑戦回数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOJ-Gd-eEv">
+                                <rect key="frame" x="261" y="60" width="91" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-gk-vGT">
+                                <rect key="frame" x="206" y="194" width="146" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="挑戦回数をマイナス"/>
+                                <connections>
+                                    <action selector="minus:" destination="a6d-IT-8Zp" eventType="touchUpInside" id="90E-az-3br"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Raa-01-F0s"/>
                     </view>
                     <connections>
                         <outlet property="English" destination="yeq-Ui-Lgc" id="nfz-27-OdL"/>
+                        <outlet property="Time" destination="kOJ-Gd-eEv" id="uWu-o1-UUk"/>
                         <outlet property="anki" destination="3FD-Yc-w0s" id="s9M-eM-ceR"/>
                         <outlet property="exppp" destination="AHy-AJ-ZIL" id="W7x-nl-tP0"/>
+                        <outlet property="minus" destination="GOk-wX-ZI3" id="brg-EN-O5j"/>
                         <outlet property="rank" destination="Mgs-6m-EUP" id="ZSj-i7-cPx"/>
                         <outlet property="sentence" destination="ASb-9B-kJ4" id="qLJ-Ph-jPM"/>
+                        <outlet property="toTry" destination="vsn-87-WMg" id="BX8-oe-btW"/>
                         <outlet property="word" destination="65X-Pi-Ruz" id="qYR-7Y-tMa"/>
+                        <segue destination="aVO-9g-Fow" kind="presentation" identifier="toBeforeTry" id="o3b-oh-zaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLu-EC-DGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -450,6 +469,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="YesAction:" destination="aVO-9g-Fow" eventType="touchUpInside" id="rGy-as-bxW"/>
                                     <segue destination="bAR-wl-xb8" kind="presentation" identifier="toTry" modalPresentationStyle="fullScreen" id="P8q-pW-Bn0"/>
                                 </connections>
                             </button>
@@ -471,6 +491,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="挑戦回数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vj0-Ib-ssA">
+                                <rect key="frame" x="284" y="188" width="42" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="brU-7O-NXk"/>
@@ -480,6 +507,8 @@
                         <outlet property="jouken1" destination="GQz-h4-4NP" id="ydr-Vn-wUQ"/>
                         <outlet property="jouken2" destination="Icw-z4-vxs" id="mRR-kW-6qG"/>
                         <outlet property="no" destination="lZ1-7n-qzh" id="Nnb-EV-KMP"/>
+                        <outlet property="trycounttt" destination="Vj0-Ib-ssA" id="Hv4-5V-Lri"/>
+                        <outlet property="yes" destination="kSa-ff-zDr" id="K6C-UJ-NHO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="di6-rW-95f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -565,7 +594,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sxM-dm-68t"/>
+        <segue reference="6EO-aP-E2k"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
