@@ -109,6 +109,7 @@ class Top: UIViewController {
     }
     
     @IBAction func toBeforeTry(_ sender: UIButton) {
+        
         if tryCount <= 2 {
             performSegue(withIdentifier: "toBeforeTry", sender: toTry)
         }else{
@@ -163,17 +164,16 @@ class Top: UIViewController {
         let calendar = Calendar.current
         let nowDay = Date(timeIntervalSinceNow: 60 * 60 * 9)
         var judge = Bool()
-        
+
         if UD.object(forKey: "today") != nil{
             let pastDay = UD.object(forKey: "today") as! Date
             let now = calendar.component(.day, from: nowDay)
             let past = calendar.component(.day, from: pastDay)
-            
+
             //日にちが変わっていた場合
             if now != past {
                 judge = true
-            }else{
-                judge = false
+                UD.set(nowDay, forKey: "today")
             }
         }//if
         //初回実行のみelse
@@ -181,13 +181,14 @@ class Top: UIViewController {
             judge = true
             UD.set(nowDay, forKey:  "today")
         }
-        
+
         if judge == true{
             judge = false
             tryCount = 0
             userDefaults1.set(tryCount, forKey: "tryCount")
+            Time.text = String(tryCount)
         }
-        
+
     }
 
     @IBAction func minus(_ sender: Any) {
