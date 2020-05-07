@@ -13,6 +13,8 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var mis: UILabel!
     @IBOutlet weak var usedTime: UILabel!
     @IBOutlet weak var rrrecord: UILabel!
+    @IBOutlet weak var rrrecord2: UILabel!
+    @IBOutlet weak var rrrecord3: UILabel!
     @IBOutlet weak var wpm: UILabel!
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var backHome: UIButton!
@@ -38,13 +40,17 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
         mis.text = misss
         usedTime.text = String(usedTimee)
-        rrrecord.text = String(rrrecorddd[0])+","+String(rrrecorddd[1])+","+String(rrrecorddd[2])
+        rrrecord.text = String(rrrecorddd[0])
+        rrrecord2.text = String(rrrecorddd[1])
+        rrrecord3.text = String(rrrecorddd[2])
         wpm.text = String(round(60*letterCount2/usedTimee))
         
         if time == true{
-            timeOut.text = "時間切れ！！"
+            timeOut.text = "残念！\n時間切れ！！"
+            flower.image = UIImage(named: "花1")
         }else{
-            timeOut.text = "クリア！！"
+            timeOut.text = "満開！\n大変素晴らしいです"
+            flower.image = UIImage(named: "花5")
         }
         
         

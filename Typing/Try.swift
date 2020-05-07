@@ -174,7 +174,6 @@ class Try: UIViewController {
                 
                 
                 
-                
                  performSegue(withIdentifier: "toTryResult", sender: nil)
                 
             }else if field.text! == question2.text!.prefix(field.text!.count){
@@ -205,6 +204,7 @@ class Try: UIViewController {
         tryRes.usedTimeNum = usedTime2
         tryRes.missNum = count2
         tryRes.upOrDown2 = upOrDown
+        tryRes.new = userDefaults3.object(forKey: "rankNum2") as! Int
         }
     }
     

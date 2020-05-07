@@ -15,7 +15,6 @@ class BeforeTry: UIViewController {
     @IBOutlet weak var jouken2: UILabel!
     @IBOutlet weak var no: UIButton!
     @IBOutlet weak var yes: UIButton!
-    @IBOutlet weak var trycounttt: UILabel!
     var rankNum = 0
     
     let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
@@ -39,7 +38,6 @@ class BeforeTry: UIViewController {
         jouken1.text = up[rankNum]
         jouken2.text = down[rankNum]
         
-        trycounttt.text = String(tryCount)
     }
     
     @IBAction func NoAction(_ sender: Any) {
