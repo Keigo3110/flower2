@@ -28,9 +28,11 @@ class Top: UIViewController {
     @IBOutlet weak var Time: UILabel!
     @IBOutlet weak var toTry: UIButton!
     @IBOutlet weak var minus: UILabel!
-    
+    @IBOutlet weak var happa: UIImageView!
+    @IBOutlet weak var aaaaa: UIImageView!
     let UD = UserDefaults.standard
     
+   
     
    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
     
@@ -42,6 +44,16 @@ class Top: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        word.setBackgroundImage(UIImage(named:"単語"), for: .normal)
+        sentence.setBackgroundImage(UIImage(named:"長文"), for: .normal)
+        English.setBackgroundImage(UIImage(named:"英語"), for: .normal)
+        anki.setBackgroundImage(UIImage(named:"暗記"), for: .normal)
+        toTry.setBackgroundImage(UIImage(named:"syodan"), for: .normal)
+        
+        aaaaa.image = UIImage(named: "上のやつ")
+        happa.image = UIImage(named: "葉っぱ")
+        
+        self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         
         judgeDate()
         userDefaults1.register(defaults: ["tryCount" : 0])

@@ -41,6 +41,8 @@ class Try: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
+
         shiji.isHidden = false
         count2 = 0
         time.text = String(timerr2[0])+":"+String(timerr2[1])+String(timerr2[2])

@@ -18,6 +18,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var backHome: UIButton!
     @IBOutlet weak var timeOut: UILabel!
     
+    @IBOutlet weak var flower: UIImageView!
     
     
     var misss:String = ""
@@ -30,6 +31,9 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
+        backHome.setBackgroundImage(UIImage(named:"木枠2"), for: .normal)
+        back.setBackgroundImage(UIImage(named:"木枠2"), for: .normal)
 
         // Do any additional setup after loading the view.
         mis.text = misss

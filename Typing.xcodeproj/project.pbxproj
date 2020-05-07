@@ -20,6 +20,7 @@
 		49C8A1EF245AE0B000E46BD1 /* Try.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8A1EE245AE0B000E46BD1 /* Try.swift */; };
 		49C8A1F1245BBA2B00E46BD1 /* BeforeTry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8A1F0245BBA2B00E46BD1 /* BeforeTry.swift */; };
 		49C8A1F3245BCF3B00E46BD1 /* TryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8A1F2245BCF3B00E46BD1 /* TryResult.swift */; };
+		8552145D2463E3F80080CA64 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552145C2463E3F80080CA64 /* startViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		49C8A1EE245AE0B000E46BD1 /* Try.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Try.swift; sourceTree = "<group>"; };
 		49C8A1F0245BBA2B00E46BD1 /* BeforeTry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTry.swift; sourceTree = "<group>"; };
 		49C8A1F2245BCF3B00E46BD1 /* TryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryResult.swift; sourceTree = "<group>"; };
+		8552145C2463E3F80080CA64 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				49C8A1F0245BBA2B00E46BD1 /* BeforeTry.swift */,
 				49C8A1EE245AE0B000E46BD1 /* Try.swift */,
 				49C8A1EC2459280700E46BD1 /* Top.swift */,
+				8552145C2463E3F80080CA64 /* startViewController.swift */,
 				4923ADAD2456946900454E1A /* ViewController.swift */,
 				49C8A1EA24585DAA00E46BD1 /* SecondViewController.swift */,
 				4923ADB22456946E00454E1A /* Assets.xcassets */,
@@ -278,6 +281,7 @@
 				49C8A1EB24585DAA00E46BD1 /* SecondViewController.swift in Sources */,
 				4923ADAE2456946900454E1A /* ViewController.swift in Sources */,
 				49C8A1ED2459280700E46BD1 /* Top.swift in Sources */,
+				8552145D2463E3F80080CA64 /* startViewController.swift in Sources */,
 				49C8A1F1245BBA2B00E46BD1 /* BeforeTry.swift in Sources */,
 				49C8A1EF245AE0B000E46BD1 /* Try.swift in Sources */,
 				4923ADAA2456946900454E1A /* AppDelegate.swift in Sources */,
@@ -455,7 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 686794KP5N;
+				DEVELOPMENT_TEAM = 6C9AJ5PN4Y;
 				INFOPLIST_FILE = Typing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (

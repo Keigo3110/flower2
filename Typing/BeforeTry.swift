@@ -30,6 +30,8 @@ class BeforeTry: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
+
 
         // Do any additional setup after loading the view.
         
