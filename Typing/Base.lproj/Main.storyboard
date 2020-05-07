@@ -309,6 +309,7 @@
                         <outlet property="backHome" destination="bYb-Wi-hwb" id="ohG-Gr-nhU"/>
                         <outlet property="coun" destination="ezt-qo-IdA" id="l9q-gO-JSa"/>
                         <outlet property="field" destination="Wy2-9y-qDe" id="J0j-us-W0f"/>
+                        <outlet property="flower" destination="0fU-ds-2bu" id="Yk6-lg-a1Z"/>
                         <outlet property="good" destination="HvM-eE-iH7" id="rzW-w1-fzU"/>
                         <outlet property="questionLabel" destination="fL4-rV-swo" id="iYf-4C-a06"/>
                         <outlet property="retry" destination="cAh-Gu-9tq" id="TSe-Nj-Jzx"/>

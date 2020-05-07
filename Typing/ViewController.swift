@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var backHome: UIButton!
     @IBOutlet weak var retry: UIButton!
     @IBOutlet weak var shiji: UILabel!
-   
+    @IBOutlet weak var flower: UIImageView!
+    
     
     
     
@@ -42,9 +43,10 @@ class ViewController: UIViewController {
     var expPoint = 0
     let kind = ["word","sentence","English","anki"]
     let userDefaults = UserDefaults.standard
+    let qNum = [10,5,10,10]
     
 
-     var timerr: [Int] = [30,0,0]
+    var timerr: [Int] = [30,0,0]
     var timerr2:Double = 0.1
     @IBOutlet weak var time: UILabel!
     
@@ -55,9 +57,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
        
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
-
-        
-        
+        flower.image = UIImage(named: "花1")
         shiji.text = "タップしてスタート"
         shiji.isHidden = false
         Random()
@@ -194,7 +194,7 @@ class ViewController: UIViewController {
     func judge(){
        
         
-    if quesCount<1{
+    if quesCount < qNum[choice]-1 {
         if field.text! == question{
             abc = true
             field.text = ""
@@ -204,6 +204,7 @@ class ViewController: UIViewController {
             if (choice == 3){
              myTimer2 = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer2) , userInfo: nil, repeats: true)
             }
+            changeFlowers(index: quesCount)
             Random()
             questionLabel.text = question
         }else if field.text! == question.prefix(field.text!.count){
@@ -322,7 +323,17 @@ class ViewController: UIViewController {
     }
     
     
-    
+    func changeFlowers(index: Int) {
+        if index >= qNum[choice]/4 {
+            flower.image = UIImage(named: "花2")
+        }
+        if index >= qNum[choice]/2 {
+            flower.image = UIImage(named: "花3")
+        }
+        if index >= 3*qNum[choice]/4 {
+            flower.image = UIImage(named: "花4")
+        }
+    }
     
     
     
