@@ -21,6 +21,7 @@
 		49C8A1F1245BBA2B00E46BD1 /* BeforeTry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8A1F0245BBA2B00E46BD1 /* BeforeTry.swift */; };
 		49C8A1F3245BCF3B00E46BD1 /* TryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8A1F2245BCF3B00E46BD1 /* TryResult.swift */; };
 		8552145D2463E3F80080CA64 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552145C2463E3F80080CA64 /* startViewController.swift */; };
+		8552145F246424E90080CA64 /* keifont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8552145E246424E90080CA64 /* keifont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		49C8A1F0245BBA2B00E46BD1 /* BeforeTry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTry.swift; sourceTree = "<group>"; };
 		49C8A1F2245BCF3B00E46BD1 /* TryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryResult.swift; sourceTree = "<group>"; };
 		8552145C2463E3F80080CA64 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
+		8552145E246424E90080CA64 /* keifont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = keifont.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				49C8A1EC2459280700E46BD1 /* Top.swift */,
 				8552145C2463E3F80080CA64 /* startViewController.swift */,
 				4923ADAD2456946900454E1A /* ViewController.swift */,
+				8552145E246424E90080CA64 /* keifont.ttf */,
 				49C8A1EA24585DAA00E46BD1 /* SecondViewController.swift */,
 				4923ADB22456946E00454E1A /* Assets.xcassets */,
 				4923ADB42456946E00454E1A /* LaunchScreen.storyboard */,
@@ -253,6 +256,7 @@
 				4923ADB62456946E00454E1A /* LaunchScreen.storyboard in Resources */,
 				4923ADB32456946E00454E1A /* Assets.xcassets in Resources */,
 				4923ADB12456946900454E1A /* Main.storyboard in Resources */,
+				8552145F246424E90080CA64 /* keifont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

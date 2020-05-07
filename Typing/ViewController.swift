@@ -264,6 +264,7 @@ class ViewController: UIViewController {
                 SaveExp(point: expPoint)
                 
                 let vc = self.presentingViewController as! Top
+                
                 vc.expPoint2 = userDefaults.object(forKey: "expPoint") as! Int
                 vc.viewDidLoad()
                 
