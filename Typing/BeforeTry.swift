@@ -47,8 +47,6 @@ class BeforeTry: UIViewController {
 
     @IBAction func YesAction(_ sender: Any) {
         tryCount += 1
-        
-        
         let top = self.presentingViewController as! Top
         top.tryCount = tryCount
         top.viewDidLoad()

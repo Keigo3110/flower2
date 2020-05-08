@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var retry: UIButton!
     @IBOutlet weak var shiji: UILabel!
     @IBOutlet weak var flower: UIImageView!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     
     
@@ -55,6 +57,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
        
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         flower.image = UIImage(named: "花1")

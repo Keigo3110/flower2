@@ -23,6 +23,7 @@
 		49C8A1F3245BCF3B00E46BD1 /* TryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8A1F2245BCF3B00E46BD1 /* TryResult.swift */; };
 		8552145D2463E3F80080CA64 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552145C2463E3F80080CA64 /* startViewController.swift */; };
 		8552145F246424E90080CA64 /* keifont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8552145E246424E90080CA64 /* keifont.ttf */; };
+		85FD46E1246559D6004B1FCA /* button01a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85FD46E0246559D6004B1FCA /* button01a.mp3 */; };
 		889FBC1215EC11F433572F55 /* Pods_Typing_TypingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C989623B92B56F2950BBA5F /* Pods_Typing_TypingUITests.framework */; };
 		BF110A0FD2928F3440CF91C8 /* Pods_Typing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1750991A1F4880E57E76B89C /* Pods_Typing.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		6C989623B92B56F2950BBA5F /* Pods_Typing_TypingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Typing_TypingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8552145C2463E3F80080CA64 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
 		8552145E246424E90080CA64 /* keifont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = keifont.ttf; sourceTree = "<group>"; };
+		85FD46E0246559D6004B1FCA /* button01a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button01a.mp3; sourceTree = "<group>"; };
 		A702A71A1BB8AF5E2212D8D7 /* Pods-Typing-TypingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Typing-TypingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Typing-TypingUITests/Pods-Typing-TypingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C10F2957452006B4FCEA1ACB /* Pods-Typing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Typing.release.xcconfig"; path = "Target Support Files/Pods-Typing/Pods-Typing.release.xcconfig"; sourceTree = "<group>"; };
 		DEB2531536843E483F9455D6 /* Pods-TypingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypingTests.debug.xcconfig"; path = "Target Support Files/Pods-TypingTests/Pods-TypingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				4923ADAF2456946900454E1A /* Main.storyboard */,
 				49C8A1F2245BCF3B00E46BD1 /* TryResult.swift */,
 				49C8A1F0245BBA2B00E46BD1 /* BeforeTry.swift */,
+				85FD46E0246559D6004B1FCA /* button01a.mp3 */,
 				49C8A1EE245AE0B000E46BD1 /* Try.swift */,
 				49C8A1EC2459280700E46BD1 /* Top.swift */,
 				8552145C2463E3F80080CA64 /* startViewController.swift */,
@@ -303,6 +306,7 @@
 				4923ADB62456946E00454E1A /* LaunchScreen.storyboard in Resources */,
 				4923ADB32456946E00454E1A /* Assets.xcassets in Resources */,
 				4923ADB12456946900454E1A /* Main.storyboard in Resources */,
+				85FD46E1246559D6004B1FCA /* button01a.mp3 in Resources */,
 				8552145F246424E90080CA64 /* keifont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

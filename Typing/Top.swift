@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import GoogleMobileAds
+import AVFoundation
 
 
 
-class Top: UIViewController {
+class Top: UIViewController, AVAudioPlayerDelegate{
     
     let exp = [0,0,50,56,62,120,130,142,156,172,190,210,1000]
     var level:Int = 0
     var expPoint2 = 0
     var tryCount = 0
-    
+    var audioPlayer: AVAudioPlayer!
     let userDefaults1 = UserDefaults.standard
     
     @IBOutlet weak var word: UIButton!
@@ -32,7 +34,8 @@ class Top: UIViewController {
     @IBOutlet weak var aaaaa: UIImageView!
     let UD = UserDefaults.standard
     
-   
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     
    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
     
@@ -44,6 +47,12 @@ class Top: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+       
+        
+        
         word.setBackgroundImage(UIImage(named:"単語"), for: .normal)
         sentence.setBackgroundImage(UIImage(named:"長文"), for: .normal)
         English.setBackgroundImage(UIImage(named:"英語"), for: .normal)
@@ -55,6 +64,29 @@ class Top: UIViewController {
         
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         
+        
+        // 再生する audio ファイルのパスを取得
+            let audioPath = Bundle.main.path(forResource: "button01a", ofType:"mp3")!
+            let audioUrl = URL(fileURLWithPath: audioPath)
+            
+            
+            // auido を再生するプレイヤーを作成する
+            var audioError:NSError?
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+            } catch let error as NSError {
+                audioError = error
+                audioPlayer = nil
+            }
+            
+            // エラーが起きたとき
+            if let error = audioError {
+                print("Error")
+            }
+            
+            audioPlayer.delegate = self
+            audioPlayer.prepareToPlay()
+            
         judgeDate()
         userDefaults1.register(defaults: ["tryCount" : 0])
         
@@ -105,6 +137,7 @@ class Top: UIViewController {
     }
     
     @IBAction func toQustion(_ sender: UIButton) {
+        audioPlayer.play()
         performSegue(withIdentifier: "toQuestion1", sender: word)
     }
     
@@ -221,3 +254,4 @@ class Top: UIViewController {
     
     
 }
+

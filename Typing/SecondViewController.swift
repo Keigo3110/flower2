@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import Social
+import GoogleMobileAds
    
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, GADInterstitialDelegate{
     
     @IBOutlet weak var mis: UILabel!
     @IBOutlet weak var usedTime: UILabel!
@@ -25,6 +25,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var flower: UIImageView!
     
     @IBOutlet weak var Twitter: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
     
    
     var misss:String = ""
@@ -33,11 +34,30 @@ class SecondViewController: UIViewController {
     var wpmmm:String = ""
     var letterCount2:Double = 0
     var time = false
+    var interstitial: GADInterstitial!
     
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+         interstitial.delegate = self
+         interstitial.load(GADRequest())
+         return interstitial
+       }
+       
+       func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+         interstitial = createAndLoadInterstitial()
+         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+       }
+
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        interstitial = createAndLoadInterstitial()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
          self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         backHome.setBackgroundImage(UIImage(named:"木枠2"), for: .normal)
         back.setBackgroundImage(UIImage(named:"木枠2"), for: .normal)
@@ -82,10 +102,15 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func backtoHome(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        if interstitial.isReady {
+                 interstitial.present(fromRootViewController: self)
+               } else {
+                print("Ad wasn't ready")
+                 self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+               }
     }
     
-    
+   
  
 
 }

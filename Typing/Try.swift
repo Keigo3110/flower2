@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class Try: UIViewController {
     
@@ -17,6 +18,7 @@ class Try: UIViewController {
     @IBOutlet weak var shiji: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var field: UITextField!
+    @IBOutlet weak var bannerView: GADBannerView!
     
 
     
@@ -39,6 +41,10 @@ class Try: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
