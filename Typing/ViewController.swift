@@ -317,25 +317,29 @@ class ViewController: UIViewController {
     func misJudge(){
         if field.text != "" {
         
-        if ans2.count >= 2{
+            if ans2.count >= 2{
         
-        if field.text!.suffix(1) == ans2.prefix(1){
-            ans2 = String(ans2.suffix(ans2.count - 1))
-            abc = true
-        }else if abc == true{
-            count += 1
-            aaa()
-            abc = false
-            //震えるやつ
-        }
+                if field.text!.suffix(1) == ans2.prefix(1){
+                    ans2 = String(ans2.suffix(ans2.count - 1))
+                    abc = true
+                }
+                if field.text!.suffix(1) != ans2.prefix(1) && abc == true{
+                    count += 1
+                    aaa()
+                    abc = false
+                    //震えるやつ
+                }
         
-        }else if field.text!.suffix(1) != ans2  && abc == true{
-            count += 1
-            aaa()
-        }else if field.text!.suffix(1) == ans2{
-            abc = true
+            }else {
+                if field.text!.suffix(1) != ans2  && abc == true{
+                    count += 1
+                    aaa()
+                    abc = false
+                }
+                if field.text!.suffix(1) == ans2 {
+                  abc = true
+                }
             }
-        
         }
         
     }
