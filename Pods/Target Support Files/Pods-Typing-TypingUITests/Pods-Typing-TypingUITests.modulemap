@@ -1,0 +1,6 @@
+framework module Pods_Typing_TypingUITests {
+  umbrella header "Pods-Typing-TypingUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
