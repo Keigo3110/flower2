@@ -12,6 +12,7 @@ import AudioToolbox
 
 
 class ViewController: UIViewController {
+
     
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var good: UILabel!
@@ -25,10 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var jouro: UIImageView!
     
-    func shortVibrate() {
-        AudioServicesPlaySystemSound(1003);
-        AudioServicesDisposeSystemSoundID(1003);
-    }
+    
     
     
     
