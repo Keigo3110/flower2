@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Social
+   
 
 class SecondViewController: UIViewController {
     
@@ -22,7 +24,9 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var flower: UIImageView!
     
+    @IBOutlet weak var Twitter: UIButton!
     
+   
     var misss:String = ""
     var usedTimee:Double = 0
     var rrrecorddd:[Double] = [0,0,0]
@@ -32,6 +36,7 @@ class SecondViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
          self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         backHome.setBackgroundImage(UIImage(named:"木枠2"), for: .normal)
@@ -79,6 +84,8 @@ class SecondViewController: UIViewController {
     @IBAction func backtoHome(_ sender: Any) {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    
  
 
 }
