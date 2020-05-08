@@ -257,7 +257,6 @@ class ViewController: UIViewController {
             
            }else if abc == true{
                good.text = "Bad!"
-                aaa()
                 abc = false
            }else{
                 good.text = "Bad!"
@@ -322,7 +321,6 @@ class ViewController: UIViewController {
              
             }else if abc == true{
                 good.text = "Bad!"
-                 aaa()
                  abc = false
             }else{
                  good.text = "Bad!"
@@ -333,19 +331,23 @@ class ViewController: UIViewController {
     }//judge
     
     func misJudge(){
+        if field.text != "" {
+        
+        if ans2.count >= 2{
+        
         if field.text!.suffix(1) == ans2.prefix(1){
             ans2 = String(ans2.suffix(ans2.count - 1))
         }else{
             count += 1
+            aaa()
             //震えるやつ
         }
         
+        }else if field.text!.suffix(1) != ans2 {
+            count += 1
+        }
         
-        
-        
-        
-        
-        
+        }
         
     }
     
