@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var shiji: UILabel!
     @IBOutlet weak var flower: UIImageView!
     @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var jouro: UIImageView!
     
     
     
@@ -41,11 +42,13 @@ class ViewController: UIViewController {
     var choice:Int = 0
     var stop = false
     var started = false
+    var animation = true
     var finish = false
     var expPoint = 0
     let kind = ["word","sentence","English","anki"]
     let userDefaults = UserDefaults.standard
     let qNum = [10,5,10,10]
+    var flowers = 0
     
 
     var timerr: [Int] = [30,0,0]
@@ -142,6 +145,15 @@ class ViewController: UIViewController {
         if(choice == 3){
             myTimer2 = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer2) , userInfo: nil, repeats: true)
         }
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: [.repeat], animations: {
+                   self.jouro.transform = CGAffineTransform(rotationAngle: CGFloat.pi/10)
+               }, completion: nil)
+               
+               if animation == false {
+                   resumeLayer(layer: jouro.layer)
+                   animation = true
+               }
+
         
         
     }
@@ -156,6 +168,22 @@ class ViewController: UIViewController {
     func aaa(){
         coun.text = String(count)
     }
+    
+    func pauseLayer(layer: CALayer) {
+     let pausedTime: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil)
+        layer.speed = 0.0
+        layer.timeOffset = pausedTime
+    }
+
+    func resumeLayer(layer: CALayer) {
+        let pausedTime: CFTimeInterval = layer.timeOffset
+        layer.speed = 1.0
+        layer.timeOffset = 0.0
+        layer.beginTime = 0.0
+     let timeSincePause: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+        layer.beginTime = timeSincePause
+    }
+
     
     @IBAction func retryyy(_ sender: Any) {
         
@@ -174,11 +202,13 @@ class ViewController: UIViewController {
         }
         if started == true && stop == true{
             myTimer.invalidate()
+            animation = false
             stop = false
             retry.setTitle("Retry", for: .normal)
             field.endEditing(true)
             shiji.text = "タップして再開"
             shiji.isHidden = false
+            pauseLayer(layer: jouro.layer)
             
         }else if started == true && stop == false{
             count = 0
@@ -236,6 +266,7 @@ class ViewController: UIViewController {
                 ans.text = ""
                 quesCount = 0
                 letterCount += question.count
+                flowers = 4
                 myTimer.invalidate()
                 
                 
@@ -322,6 +353,7 @@ class ViewController: UIViewController {
                     second.rrrecorddd =  record
                     second.letterCount2 = Double(letterCount)
                     second.time = finish
+                    second.flowers = flowers
                    
                 
     }
@@ -332,12 +364,15 @@ class ViewController: UIViewController {
     func changeFlowers(index: Int) {
         if index >= qNum[choice]/4 {
             flower.image = UIImage(named: "花2")
+            flowers = 1
         }
         if index >= qNum[choice]/2 {
             flower.image = UIImage(named: "花3")
+            flowers = 2
         }
         if index >= 3*qNum[choice]/4 {
             flower.image = UIImage(named: "花4")
+            flowers = 3
         }
     }
     

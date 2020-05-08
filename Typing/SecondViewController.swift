@@ -34,7 +34,10 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
     var wpmmm:String = ""
     var letterCount2:Double = 0
     var time = false
+    var flowers = 0
+    let flowersName = ["花1", "花2", "花3", "花4", "花5"]
     var interstitial: GADInterstitial!
+    
     
     func createAndLoadInterstitial() -> GADInterstitial {
         let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
@@ -72,10 +75,10 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
         
         if time == true{
             timeOut.text = "残念！\n時間切れ！！"
-            flower.image = UIImage(named: "花1")
+            flower.image = UIImage(named: flowersName[flowers])
         }else{
             timeOut.text = "満開！\n大変素晴らしいです"
-            flower.image = UIImage(named: "花5")
+            flower.image = UIImage(named: flowersName[flowers])
         }
         
         
