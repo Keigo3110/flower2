@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMobileAds
+import AudioToolbox
+
 
 class ViewController: UIViewController {
 
@@ -24,7 +26,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var jouro: UIImageView!
     
-    
+    func shortVibrate() {
+        AudioServicesPlaySystemSound(1003);
+        AudioServicesDisposeSystemSoundID(1003);
+    }
     
     
     
@@ -248,7 +253,7 @@ class ViewController: UIViewController {
             ansLabel.text = ans1
             
         }else if field.text! == ans1.prefix(field.text!.count){
-            good.text = "Good!"
+            
            ansLabel.text = String(ans1.suffix(ans1.count-field.text!.count))
             
             
@@ -299,12 +304,12 @@ class ViewController: UIViewController {
                 vc.expPoint2 = userDefaults.object(forKey: "expPoint") as! Int
                 vc.viewDidLoad()
                 
-                good.text = String(record[0])+","+String(record[1])+","+String(record[2])
+                
                 
                  performSegue(withIdentifier: "toSecond", sender: nil)
                 
             }else if field.text! == ans1.prefix(field.text!.count){
-             good.text = "Good!"
+             
             ansLabel.text = String(ans1.suffix(ans1.count-field.text!.count))
             
              
@@ -317,24 +322,31 @@ class ViewController: UIViewController {
     func misJudge(){
         if field.text != "" {
         
-        if ans2.count >= 2{
+            if ans2.count >= 2{
         
-        if field.text!.suffix(1) == ans2.prefix(1){
-            ans2 = String(ans2.suffix(ans2.count - 1))
-            abc = true
-        }else if abc == true{
-            count += 1
-            aaa()
-            abc = false
-            //震えるやつ
-        }
+                    if field.text!.suffix(1) == ans2.prefix(1){
+                        ans2 = String(ans2.suffix(ans2.count - 1))
+                        good.text = ans2
+                        abc = true
+                        }
+                        
+                    else if abc == true && field.text!.suffix(1) != ans2.prefix(1){
+                        count += 1
+                        aaa()
+                        abc = false
+                        shortVibrate()
+                        //震えるやつ
+                        }
         
-        }else if field.text!.suffix(1) != ans2  && abc == true{
-            count += 1
-            aaa()
-        }else if field.text!.suffix(1) == ans2{
-            abc = true
-            }
+        
+            }else if field.text!.suffix(1) != ans2  && abc == true{
+                    abc = false
+                    count += 1
+                    shortVibrate()
+                    aaa()
+            }else if field.text!.suffix(1) == ans2{
+                abc = true
+                }
         
         }
         

@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMobileAds
 import AVFoundation
+import AudioToolbox
+
 
 
 
@@ -40,6 +42,11 @@ class Top: UIViewController, AVAudioPlayerDelegate{
    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
     
    var rankNumber = 0
+    
+    func shortVibrate() {
+        AudioServicesPlaySystemSound(1003);
+        AudioServicesDisposeSystemSoundID(1003);
+    }
     
     
     
@@ -138,6 +145,7 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     
     @IBAction func toQustion(_ sender: UIButton) {
         audioPlayer.play()
+        
         performSegue(withIdentifier: "toQuestion1", sender: word)
     }
     
