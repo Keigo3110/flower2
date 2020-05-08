@@ -94,8 +94,9 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
         vc1.quesCount = 0
         vc1.usedTime1 = 0
         vc1.letterCount = 0
-        vc1.timerr = [10,0,0]
+        vc1.timerr = [30,0,0]
         vc1.stop = false
+        vc1.flowers = 0
         
         vc1.loadView()
         vc1.viewDidLoad()
