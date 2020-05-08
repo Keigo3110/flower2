@@ -12,7 +12,6 @@ import AudioToolbox
 
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var good: UILabel!
