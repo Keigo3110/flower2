@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var good: UILabel!
     @IBOutlet weak var coun: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var ans: UILabel!
+    @IBOutlet weak var ansLabel: UILabel!
     @IBOutlet weak var backHome: UIButton!
     @IBOutlet weak var retry: UIButton!
     @IBOutlet weak var shiji: UILabel!
@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     
     
     var question = ""
+    var ans1 = ""
+    var ans2 = ""
     var count = 0
     var abc = true
     var quesCount = 0
@@ -72,6 +74,7 @@ class ViewController: UIViewController {
         aaa()
         count = 0
         questionLabel.text = question
+        ansLabel.text = ans1
         retry.setTitle("Retry", for: .normal)
         
         time.text = String(timerr[0])+":"+String(timerr[1])+String(timerr[2])
@@ -161,6 +164,7 @@ class ViewController: UIViewController {
 
     @IBAction func EditingChanged(_ sender: Any) {
         judge()
+        misJudge()
         
         
     }
@@ -230,7 +234,7 @@ class ViewController: UIViewController {
        
         
     if quesCount < qNum[choice]-1 {
-        if field.text! == question{
+        if field.text! == ans1{
             abc = true
             field.text = ""
             quesCount += 1
@@ -242,16 +246,17 @@ class ViewController: UIViewController {
             changeFlowers(index: quesCount)
             Random()
             questionLabel.text = question
-        }else if field.text! == question.prefix(field.text!.count){
+            ansLabel.text = ans1
+            
+        }else if field.text! == ans1.prefix(field.text!.count){
             good.text = "Good!"
             abc = true
-           ans.text = String(question.suffix(question.count-field.text!.count))
+           ansLabel.text = String(ans1.suffix(ans1.count-field.text!.count))
             
             
             
            }else if abc == true{
                good.text = "Bad!"
-               count += 1
                 aaa()
                 abc = false
            }else{
@@ -259,11 +264,11 @@ class ViewController: UIViewController {
                 abc = false
            }
         }else{
-            if field.text! == question{
+            if field.text! == ans1{
                 
                
                 field.text = ""
-                ans.text = ""
+                ansLabel.text = ""
                 quesCount = 0
                 letterCount += question.count
                 flowers = 4
@@ -308,16 +313,15 @@ class ViewController: UIViewController {
                 
                  performSegue(withIdentifier: "toSecond", sender: nil)
                 
-            }else if field.text! == question.prefix(field.text!.count){
+            }else if field.text! == ans1.prefix(field.text!.count){
              good.text = "Good!"
              abc = true
-            ans.text = String(question.suffix(question.count-field.text!.count))
+            ansLabel.text = String(ans1.suffix(ans1.count-field.text!.count))
             
              
              
             }else if abc == true{
                 good.text = "Bad!"
-                count += 1
                  aaa()
                  abc = false
             }else{
@@ -327,6 +331,23 @@ class ViewController: UIViewController {
         }//else
         
     }//judge
+    
+    func misJudge(){
+        if field.text!.suffix(1) == ans2.prefix(1){
+            ans2 = String(ans2.suffix(ans2.count - 1))
+        }else{
+            count += 1
+            //震えるやつ
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+    }
     
     func SaveData(hairetsu:[Double],sort:String){
            userDefaults.set(hairetsu, forKey: sort)
@@ -406,17 +427,26 @@ class ViewController: UIViewController {
         if choice == 1{
            switch (randomNumber) {
            case 1:
-               question = "あいうえお"
+               question = "信号"
+               ans1 = "しんごう"
+               ans2 = "しんこごう"
+               
                
                break
            case 2:
-               question = "かきくけこ"
+               question = "海岸"
+               ans1 = "かいがん"
+               ans2 = "かいかがん"
                break
            case 3:
-               question = "さしすせそ"
+               question = "差別"
+               ans1 = "さべつ"
+               ans2 = "さへべつ"
                break
            default:
-               question = "もはじすあ"
+               question = "次第"
+               ans1 = "しだい"
+               ans2 = "しただい"
                break
            }
         }
@@ -456,7 +486,7 @@ class ViewController: UIViewController {
            }
         }
         
-        ans.text = question
+        
            
            
        }

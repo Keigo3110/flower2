@@ -427,7 +427,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Nw9-s4-N1U"/>
                     <connections>
-                        <outlet property="ans" destination="TEV-al-pp7" id="Noy-f9-nTw"/>
+                        <outlet property="ansLabel" destination="TEV-al-pp7" id="4Ta-Oo-igV"/>
                         <outlet property="backHome" destination="bYb-Wi-hwb" id="ohG-Gr-nhU"/>
                         <outlet property="bannerView" destination="xp6-P5-fst" id="5xh-wQ-eLX"/>
                         <outlet property="coun" destination="ezt-qo-IdA" id="l9q-gO-JSa"/>
@@ -671,7 +671,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="花5" translatesAutoresizingMaskIntoConstraints="NO" id="KcI-vI-jgr">
-                                <rect key="frame" x="90" y="227" width="234" height="273"/>
+                                <rect key="frame" x="90" y="235" width="234" height="273"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KcI-vI-jgr" secondAttribute="height" multiplier="235:274" id="ejU-MF-2aA"/>
                                 </constraints>
@@ -687,13 +687,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメント" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuN-wS-IQQ">
-                                <rect key="frame" x="75" y="564" width="264" height="20"/>
+                                <rect key="frame" x="75" y="567" width="264" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合否" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaQ-Lx-QgP">
-                                <rect key="frame" x="100" y="520" width="214" height="34"/>
+                                <rect key="frame" x="100" y="528" width="214" height="29"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1034,25 +1034,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4b-Ru-7Na">
-                                <rect key="frame" x="83" y="699" width="52" height="20"/>
+                                <rect key="frame" x="83" y="705" width="52" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイプ数/分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riL-FE-rVK">
-                                <rect key="frame" x="62" y="671" width="414" height="20"/>
+                                <rect key="frame" x="62" y="680" width="414" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxp-YH-3jh">
-                                <rect key="frame" x="251" y="665" width="91" height="20"/>
+                                <rect key="frame" x="251" y="668" width="91" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="誤タイプ数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gel-aL-gVd">
-                                <rect key="frame" x="62" y="747" width="90" height="15"/>
+                                <rect key="frame" x="62" y="750" width="90" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="KIR-TE-VCQ"/>
                                     <constraint firstAttribute="width" constant="90" id="Yet-fh-aBX"/>
@@ -1112,13 +1112,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間切れ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pew-8c-7w0">
-                                <rect key="frame" x="44" y="527.5" width="326" height="20"/>
+                                <rect key="frame" x="44" y="530.5" width="326" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrG-TC-I0f">
-                                <rect key="frame" x="83" y="772" width="52" height="20"/>
+                                <rect key="frame" x="83" y="775" width="52" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
