@@ -288,7 +288,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                 <connections>
-                                    <action selector="DidEndonExit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="R5N-3s-4cu"/>
                                     <action selector="EditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="72I-J0-Iz0"/>
                                     <action selector="EditingDidBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="c64-cG-nk8"/>
                                 </connections>

@@ -235,7 +235,6 @@ class ViewController: UIViewController {
         
     if quesCount < qNum[choice]-1 {
         if field.text! == ans1{
-            abc = true
             field.text = ""
             quesCount += 1
             letterCount += question.count
@@ -250,22 +249,14 @@ class ViewController: UIViewController {
             
         }else if field.text! == ans1.prefix(field.text!.count){
             good.text = "Good!"
-            abc = true
            ansLabel.text = String(ans1.suffix(ans1.count-field.text!.count))
             
             
             
-           }else if abc == true{
-               good.text = "Bad!"
-                abc = false
-           }else{
-                good.text = "Bad!"
-                abc = false
-           }
+          }
         }else{
             if field.text! == ans1{
                 
-               
                 field.text = ""
                 ansLabel.text = ""
                 quesCount = 0
@@ -314,17 +305,10 @@ class ViewController: UIViewController {
                 
             }else if field.text! == ans1.prefix(field.text!.count){
              good.text = "Good!"
-             abc = true
             ansLabel.text = String(ans1.suffix(ans1.count-field.text!.count))
             
              
              
-            }else if abc == true{
-                good.text = "Bad!"
-                 abc = false
-            }else{
-                 good.text = "Bad!"
-                 abc = false
             }
         }//else
         
@@ -337,15 +321,20 @@ class ViewController: UIViewController {
         
         if field.text!.suffix(1) == ans2.prefix(1){
             ans2 = String(ans2.suffix(ans2.count - 1))
-        }else{
+            abc = true
+        }else if abc == true{
             count += 1
             aaa()
+            abc = false
             //震えるやつ
         }
         
-        }else if field.text!.suffix(1) != ans2 {
+        }else if field.text!.suffix(1) != ans2  && abc == true{
             count += 1
-        }
+            aaa()
+        }else if field.text!.suffix(1) == ans2{
+            abc = true
+            }
         
         }
         
@@ -366,7 +355,10 @@ class ViewController: UIViewController {
         
     }
     
-        
+    func textFieldShouldReturn(field: UITextField) -> Bool{
+        field.resignFirstResponder()
+        return true
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 if segue.identifier == "toSecond"{
