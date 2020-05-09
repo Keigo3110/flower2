@@ -463,7 +463,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="question2">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="Keifont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -479,7 +479,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="ans2">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="Keifont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -496,10 +496,17 @@
                                     <action selector="EditingDidBegin:" destination="bAR-wl-xb8" eventType="editingDidBegin" id="UAr-VH-MhX"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップしてスタート" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKL-I0-txo">
-                                <rect key="frame" x="40" y="409" width="391" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKL-I0-txo">
+                                <rect key="frame" x="40" y="409" width="391" height="17"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="タップしてスタート">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Keifont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPq-cf-1FN">
@@ -513,7 +520,7 @@
                                         <fragment content="戻る">
                                             <attributes>
                                                 <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <font key="NSFont" metaFont="system" size="17"/>
+                                                <font key="NSFont" size="17" name="Keifont"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -538,7 +545,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="Keifont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -573,11 +580,11 @@
                             <constraint firstItem="Juu-s4-DBT" firstAttribute="leading" secondItem="eAV-mr-HvV" secondAttribute="leading" constant="100" id="6AD-hf-SQB"/>
                             <constraint firstItem="Yod-JS-aq8" firstAttribute="leading" secondItem="eAV-mr-HvV" secondAttribute="leading" constant="100" id="Exr-KE-tzJ"/>
                             <constraint firstItem="1Zs-9j-pSa" firstAttribute="top" secondItem="eAV-mr-HvV" secondAttribute="top" constant="68" id="IaQ-fD-Gn6"/>
-                            <constraint firstAttribute="trailing" secondItem="waP-8J-KSC" secondAttribute="trailing" constant="40" id="Jo4-gl-UVM"/>
                             <constraint firstItem="X9r-LJ-aSA" firstAttribute="top" secondItem="eAV-mr-HvV" secondAttribute="top" constant="52" id="ReK-69-gri"/>
                             <constraint firstItem="eAV-mr-HvV" firstAttribute="trailing" secondItem="oel-VY-B5C" secondAttribute="trailing" constant="20" id="VbT-qU-JO1"/>
                             <constraint firstItem="Juu-s4-DBT" firstAttribute="top" secondItem="eAV-mr-HvV" secondAttribute="top" constant="140" id="Via-2S-7CH"/>
                             <constraint firstItem="waP-8J-KSC" firstAttribute="leading" secondItem="eAV-mr-HvV" secondAttribute="leading" constant="40" id="Ysf-iy-fEs"/>
+                            <constraint firstItem="eAV-mr-HvV" firstAttribute="trailing" secondItem="waP-8J-KSC" secondAttribute="trailing" constant="40" id="ZaW-28-V62"/>
                             <constraint firstItem="eAV-mr-HvV" firstAttribute="trailing" secondItem="fqt-ZY-fG4" secondAttribute="trailing" constant="100" id="aZB-T1-vYx"/>
                             <constraint firstItem="GPq-cf-1FN" firstAttribute="top" secondItem="eAV-mr-HvV" secondAttribute="top" constant="70" id="bSU-hO-vZg"/>
                             <constraint firstItem="PKL-I0-txo" firstAttribute="leading" secondItem="eAV-mr-HvV" secondAttribute="leading" constant="40" id="bZW-2S-OsP"/>
@@ -671,7 +678,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="花5" translatesAutoresizingMaskIntoConstraints="NO" id="KcI-vI-jgr">
-                                <rect key="frame" x="90" y="227" width="234" height="273"/>
+                                <rect key="frame" x="90" y="235" width="234" height="273"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KcI-vI-jgr" secondAttribute="height" multiplier="235:274" id="ejU-MF-2aA"/>
                                 </constraints>
@@ -687,13 +694,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメント" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuN-wS-IQQ">
-                                <rect key="frame" x="75" y="564" width="264" height="20"/>
+                                <rect key="frame" x="75" y="567" width="264" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合否" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaQ-Lx-QgP">
-                                <rect key="frame" x="100" y="520" width="214" height="34"/>
+                                <rect key="frame" x="100" y="528" width="214" height="29"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1034,25 +1041,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4b-Ru-7Na">
-                                <rect key="frame" x="83" y="699" width="52" height="20"/>
+                                <rect key="frame" x="83" y="705" width="52" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイプ数/分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riL-FE-rVK">
-                                <rect key="frame" x="62" y="671" width="414" height="20"/>
+                                <rect key="frame" x="62" y="680" width="414" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxp-YH-3jh">
-                                <rect key="frame" x="251" y="665" width="91" height="20"/>
+                                <rect key="frame" x="251" y="668" width="91" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="誤タイプ数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gel-aL-gVd">
-                                <rect key="frame" x="62" y="747" width="90" height="15"/>
+                                <rect key="frame" x="62" y="750" width="90" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="KIR-TE-VCQ"/>
                                     <constraint firstAttribute="width" constant="90" id="Yet-fh-aBX"/>
@@ -1112,13 +1119,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間切れ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pew-8c-7w0">
-                                <rect key="frame" x="44" y="527.5" width="326" height="20"/>
+                                <rect key="frame" x="44" y="530.5" width="326" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrG-TC-I0f">
-                                <rect key="frame" x="83" y="772" width="52" height="20"/>
+                                <rect key="frame" x="83" y="775" width="52" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1133,15 +1140,18 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrH-kG-HaN">
-                                <rect key="frame" x="285" y="95" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5j-QS-EyG" userLabel="bannerView" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="49.999999999999972"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrH-kG-HaN">
+                                <rect key="frame" x="313" y="139" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Twitter:" destination="05T-Om-JBZ" eventType="touchUpInside" id="uNu-Rz-e6h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>

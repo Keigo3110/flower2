@@ -43,7 +43,7 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
     
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
       interstitial = createAndLoadInterstitial()
-      self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+      self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
      
     }
     
@@ -89,7 +89,7 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
                         interstitial.present(fromRootViewController: self)
                       } else {
                         print("Ad wasn't ready")
-                        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
                    
                       }
       

@@ -937,13 +937,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     case 83:
                         question = "先輩"
                         ans1 = "せんぱい"
-                        ans2 = "せんはぱい"
+                        ans2 = "せんはばぱい"
                         
                         break
                     case 84:
                         question = "タイピング"
                         ans1 = "たいぴんぐ"
-                        ans2 = "たいひぴんくぐ"
+                        ans2 = "たいひびぴんくぐ"
                         break
                     case 85:
                         question = "フリック"

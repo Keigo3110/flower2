@@ -69,7 +69,7 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
        
        func interstitialDidDismissScreen(_ ad: GADInterstitial) {
          interstitial = createAndLoadInterstitial()
-         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+         self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
        }
 
@@ -140,7 +140,13 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
                }
     }
     
-   
- 
-
+    
+    @IBAction func Twitter(_ sender: Any) {
+        let text = "あなたのフリック速度は1分間に\( wpm.text)文字です！\nhttps://lemonsmash.studio.design/members\n#flower"
+        let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        if let encodedText = encodedText,
+            let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
