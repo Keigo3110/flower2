@@ -26,6 +26,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var jouro: UIImageView!
     @IBOutlet weak var counting: UILabel!
+    @IBOutlet weak var personLabel: UILabel!
+    @IBOutlet weak var personView: UILabel!
     
     
     
@@ -141,7 +143,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
          userDefaults.register(defaults:["expPoint" : 0])
         
         counting.text = "\(quesCount+1)/\(qNum[choice])"
-                
+        
+        if choice == 1{
+            personView.isHidden = false
+        }else{
+            personView.isHidden = true
+        }
+        personLabel.text = person
          
      }
     
@@ -305,6 +313,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
              Random()
              questionLabel.text = question
              ansLabel.text = ans1
+             personLabel.text = person
              
          }else if field.text! == ans1.prefix(field.text!.count){
              
