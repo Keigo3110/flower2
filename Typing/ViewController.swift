@@ -464,7 +464,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
      }
 
      
-        func Random(){
+       
             func Random(){
             var randomNumber = Int.random(in: 1..<100)
                if choice == 0{
@@ -2209,7 +2209,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     ans2 = "すくぐれている"
                     break
                   }
-               }
+               
                
                
                   
