@@ -465,9 +465,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
      
         func Random(){
-            func Random(){
-            var randomNumber = Int.random(in: 1..<100)
-               if choice == 0{
+            var randomNumber = arc4random() % 100
+            randomNumber += 1
+                if choice == 0{
                   switch (randomNumber) {
                   case 1:
                       question = "ノート"
@@ -2219,4 +2219,4 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
 }
 }
-}
+
