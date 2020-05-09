@@ -32,6 +32,7 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
     let comment1 = ["おめでとう！","残念！","残念.."]
     let comment2 = ["1段昇格です！", "昇格ならず..", "1段降格です.."]
     let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
+    let flowers = ["花5", "花3", "花1"]
     var interstitial: GADInterstitial!
     
     func createAndLoadInterstitial() -> GADInterstitial {
@@ -81,6 +82,7 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
         lpmLabel.text = String(lpmNum)
         missLabel.text = String(missNum)
         newRank.text = rankName[new]
+        flower.image = UIImage(named: flowers[upOrDown2])
     }
     
     @IBAction func goHome(_ sender: Any) {

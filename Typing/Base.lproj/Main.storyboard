@@ -278,14 +278,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="時計" translatesAutoresizingMaskIntoConstraints="NO" id="jee-dK-IdH">
-                                <rect key="frame" x="314" y="96" width="100" height="100"/>
+                                <rect key="frame" x="371" y="96" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Lyy-Zr-PLh"/>
                                     <constraint firstAttribute="width" constant="100" id="tBc-Zi-o9L"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="入力" textAlignment="natural" minimumFontSize="17" background="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wy2-9y-qDe">
-                                <rect key="frame" x="40" y="414" width="334" height="34"/>
+                                <rect key="frame" x="40" y="414" width="391" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                 <connections>
@@ -331,13 +331,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="指示" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qK-ZW-Qwo">
-                                <rect key="frame" x="40" y="453" width="334" height="20"/>
+                                <rect key="frame" x="40" y="453" width="391" height="17"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL4-rV-swo">
-                                <rect key="frame" x="100" y="184" width="214" height="30"/>
+                                <rect key="frame" x="100" y="184" width="271" height="30"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eYe-uj-e1M"/>
@@ -347,21 +347,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="花3" translatesAutoresizingMaskIntoConstraints="NO" id="0fU-ds-2bu">
-                                <rect key="frame" x="100" y="284" width="214" height="120"/>
+                                <rect key="frame" x="100" y="284" width="271" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="3nM-hp-lZA"/>
                                     <constraint firstAttribute="width" constant="175" id="KCZ-GD-2AT"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="じょうろ" translatesAutoresizingMaskIntoConstraints="NO" id="hc3-TD-K1B">
-                                <rect key="frame" x="254" y="235" width="100" height="109"/>
+                                <rect key="frame" x="311" y="235" width="100" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="FkC-g1-1bL"/>
                                     <constraint firstAttribute="height" constant="109" id="dhh-Gk-2l3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reh-bq-C2d">
-                                <rect key="frame" x="322" y="112" width="76" height="68"/>
+                                <rect key="frame" x="379" y="112" width="76" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="Qrk-Tk-cqO"/>
                                     <constraint firstAttribute="width" constant="76" id="vZQ-fz-49U"/>
@@ -371,7 +371,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEV-al-pp7">
-                                <rect key="frame" x="100" y="214" width="214" height="30"/>
+                                <rect key="frame" x="100" y="214" width="271" height="30"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VEj-7n-jde"/>
@@ -388,9 +388,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xp6-P5-fst" userLabel="bannerView" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="49.999999999999972"/>
+                                <rect key="frame" x="0.0" y="0.0" width="471" height="49.999999999999972"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7v-dc-0C7">
+                                <rect key="frame" x="20" y="214" width="60" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -431,6 +438,7 @@
                         <outlet property="backHome" destination="bYb-Wi-hwb" id="ohG-Gr-nhU"/>
                         <outlet property="bannerView" destination="xp6-P5-fst" id="5xh-wQ-eLX"/>
                         <outlet property="coun" destination="ezt-qo-IdA" id="l9q-gO-JSa"/>
+                        <outlet property="counting" destination="H7v-dc-0C7" id="UVC-Bk-kI7"/>
                         <outlet property="field" destination="Wy2-9y-qDe" id="J0j-us-W0f"/>
                         <outlet property="flower" destination="0fU-ds-2bu" id="Yk6-lg-a1Z"/>
                         <outlet property="good" destination="HvM-eE-iH7" id="rzW-w1-fzU"/>
@@ -444,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533.60000000000002" y="50.824587706146929"/>
+            <point key="canvasLocation" x="533.33333333333337" y="50.223214285714285"/>
         </scene>
         <!--Try-->
         <scene sceneID="h8t-HB-0S0">
@@ -463,7 +471,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="question2">
                                         <attributes>
-                                            <font key="NSFont" size="17" name="Keifont"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -479,7 +487,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="ans2">
                                         <attributes>
-                                            <font key="NSFont" size="17" name="Keifont"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -497,12 +505,12 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKL-I0-txo">
-                                <rect key="frame" x="40" y="409" width="391" height="17"/>
+                                <rect key="frame" x="40" y="409" width="391" height="20.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="タップしてスタート">
                                         <attributes>
                                             <color key="NSColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Keifont"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -520,7 +528,7 @@
                                         <fragment content="戻る">
                                             <attributes>
                                                 <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <font key="NSFont" size="17" name="Keifont"/>
+                                                <font key="NSFont" metaFont="system" size="17"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -545,7 +553,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
-                                            <font key="NSFont" size="17" name="Keifont"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -570,6 +578,13 @@
                                 <rect key="frame" x="20" y="0.0" width="431" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohu-r0-a1c">
+                                <rect key="frame" x="20" y="149" width="72" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -603,10 +618,13 @@
                         <viewLayoutGuide key="safeArea" id="eAV-mr-HvV"/>
                     </view>
                     <connections>
-                        <outlet property="ans2" destination="Yod-JS-aq8" id="Krx-lv-gvr"/>
+                        <outlet property="ansLabel" destination="Yod-JS-aq8" id="8ev-ZR-qbU"/>
                         <outlet property="back" destination="GPq-cf-1FN" id="MTd-gg-eCC"/>
                         <outlet property="bannerView" destination="oel-VY-B5C" id="xFo-tw-Rv4"/>
+                        <outlet property="counting" destination="Ohu-r0-a1c" id="IBO-D0-BSk"/>
                         <outlet property="field" destination="waP-8J-KSC" id="Qx4-Rd-uhe"/>
+                        <outlet property="flower" destination="fqt-ZY-fG4" id="0Ai-Y1-deh"/>
+                        <outlet property="jouro" destination="Dnu-mg-yQl" id="GWY-I4-RRR"/>
                         <outlet property="question2" destination="Juu-s4-DBT" id="XH3-16-I36"/>
                         <outlet property="shiji" destination="PKL-I0-txo" id="Rz3-qn-6e6"/>
                         <outlet property="time" destination="1Zs-9j-pSa" id="3RW-hA-G15"/>
@@ -615,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIS-qH-M5F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431.19999999999999" y="825.33733133433293"/>
+            <point key="canvasLocation" x="430.43478260869568" y="825"/>
         </scene>
         <!--Try Result-->
         <scene sceneID="YRn-w3-gbg">
