@@ -9,8 +9,6 @@
 import UIKit
 import GoogleMobileAds
 import AVFoundation
-import AudioToolbox
-
 
 
 
@@ -35,6 +33,10 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     @IBOutlet weak var happa: UIImageView!
     @IBOutlet weak var aaaaa: UIImageView!
     let UD = UserDefaults.standard
+    let calendar = Calendar.current
+    let nowDay = Date(timeIntervalSinceNow: 60 * 60 * 9)
+    let pastDay1 = Date(timeIntervalSinceNow: -60 * 60 * 24)
+    var judge = false
     
     @IBOutlet weak var bannerView: GADBannerView!
     
@@ -42,11 +44,6 @@ class Top: UIViewController, AVAudioPlayerDelegate{
    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
     
    var rankNumber = 0
-    
-    func shortVibrate() {
-        AudioServicesPlaySystemSound(1003);
-        AudioServicesDisposeSystemSoundID(1003);
-    }
     
     
     
@@ -59,7 +56,7 @@ class Top: UIViewController, AVAudioPlayerDelegate{
         bannerView.load(GADRequest())
        
         
-        
+        UD.register(defaults: ["today" : nowDay])
         word.setBackgroundImage(UIImage(named:"単語"), for: .normal)
         sentence.setBackgroundImage(UIImage(named:"長文"), for: .normal)
         English.setBackgroundImage(UIImage(named:"英語"), for: .normal)
@@ -93,7 +90,7 @@ class Top: UIViewController, AVAudioPlayerDelegate{
             
             audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
-            
+        //UD.set(pastDay1, forKey: "today")
         judgeDate()
         userDefaults1.register(defaults: ["tryCount" : 0])
         
@@ -145,7 +142,6 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     
     @IBAction func toQustion(_ sender: UIButton) {
         audioPlayer.play()
-        
         performSegue(withIdentifier: "toQuestion1", sender: word)
     }
     
@@ -162,7 +158,7 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     }
     
     @IBAction func toBeforeTry(_ sender: UIButton) {
-        
+        judgeDate()
         if tryCount <= 2 {
             performSegue(withIdentifier: "toBeforeTry", sender: toTry)
         }else{
@@ -214,11 +210,9 @@ class Top: UIViewController, AVAudioPlayerDelegate{
             
 }
     func judgeDate(){
-        let calendar = Calendar.current
-        let nowDay = Date(timeIntervalSinceNow: 60 * 60 * 9)
-        var judge = Bool()
+       
 
-        if UD.object(forKey: "today") != nil{
+        
             let pastDay = UD.object(forKey: "today") as! Date
             let now = calendar.component(.day, from: nowDay)
             let past = calendar.component(.day, from: pastDay)
@@ -228,18 +222,13 @@ class Top: UIViewController, AVAudioPlayerDelegate{
                 judge = true
                 UD.set(nowDay, forKey: "today")
             }
-        }//if
-        //初回実行のみelse
-        else{
-            judge = true
-            UD.set(nowDay, forKey:  "today")
-        }
+       
 
         if judge == true{
-            judge = false
             tryCount = 0
             userDefaults1.set(tryCount, forKey: "tryCount")
             Time.text = String(tryCount)
+            judge = false
         }
 
     }
