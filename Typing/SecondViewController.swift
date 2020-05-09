@@ -29,7 +29,7 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
 
     
     
-   
+    var twiwpm:Double = 0
     var misss:String = ""
     var usedTimee:Double = 0
     var rrrecorddd:[Double] = [0,0,0]
@@ -94,7 +94,9 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
         rrrecord.text = String(rrrecorddd[0])
         rrrecord2.text = String(rrrecorddd[1])
         rrrecord3.text = String(rrrecorddd[2])
-        wpm.text = String(round(60*letterCount2/usedTimee))
+         twiwpm = round(60*letterCount2/usedTimee)
+        wpm.text = String(twiwpm)
+       
         
         if time == true{
             music(sound: "時間切れ")
@@ -142,7 +144,7 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
     
     
     @IBAction func Twitter(_ sender: Any) {
-        let text = "あなたのフリック速度は1分間に\( wpm.text)文字です！\nhttps://lemonsmash.studio.design/members\n#flower"
+        let text = "あなたのフリック速度は1分間に\( twiwpm)文字です！\nhttps://lemonsmash.studio.design/members\n#flower"
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let encodedText = encodedText,
             let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {

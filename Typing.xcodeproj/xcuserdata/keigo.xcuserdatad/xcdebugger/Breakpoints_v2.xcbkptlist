@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "29E04A1F-6485-476B-80B0-AAFDDA37FB46"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E340E9F2-6E61-4D64-B1CF-B382415E0E88"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Typing/BeforeTry.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "BeforeTry"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E340E9F2-6E61-4D64-B1CF-B382415E0E88 - 3cc1f4f443f92755"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Typing.BeforeTry.rankName.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Typing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/keigo/Library/Autosave%20Information/Typing/Typing/BeforeTry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "E340E9F2-6E61-4D64-B1CF-B382415E0E88 - 5a573e0bb31eea11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Typing.BeforeTry.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Typing.BeforeTry"
+                  moduleName = "Typing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/keigo/Library/Autosave%20Information/Typing/Typing/BeforeTry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1075">
+               </Location>
+               <Location
+                  uuid = "E340E9F2-6E61-4D64-B1CF-B382415E0E88 - 404c66c6a5ed05fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Typing.BeforeTry.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Typing.BeforeTry&gt;"
+                  moduleName = "Typing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/keigo/Library/Autosave%20Information/Typing/Typing/BeforeTry.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
