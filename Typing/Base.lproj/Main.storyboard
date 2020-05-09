@@ -27,7 +27,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="a6d-IT-8Zp" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="ELQ-VN-Xkt"/>
+                                    <segue destination="a6d-IT-8Zp" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ELQ-VN-Xkt"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="葉っぱ" translatesAutoresizingMaskIntoConstraints="NO" id="7vn-z4-4hj">
@@ -97,7 +97,7 @@
                                 </state>
                                 <connections>
                                     <action selector="toQuestion2:" destination="a6d-IT-8Zp" eventType="touchUpInside" id="bje-6P-W7P"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion2" modalPresentationStyle="fullScreen" id="2JA-3c-luj"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion2" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="2JA-3c-luj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeq-Ui-Lgc">
@@ -111,7 +111,7 @@
                                 </state>
                                 <connections>
                                     <action selector="toQuestion3:" destination="a6d-IT-8Zp" eventType="touchUpInside" id="GwY-Cw-jFn"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion3" modalPresentationStyle="fullScreen" id="Ojh-6L-Fha"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion3" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Ojh-6L-Fha"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FD-Yc-w0s">
@@ -126,7 +126,7 @@
                                 <connections>
                                     <action selector="toQuestion3:" destination="a6d-IT-8Zp" eventType="touchUpInside" id="axf-X7-gH6"/>
                                     <action selector="toQuestion4:" destination="a6d-IT-8Zp" eventType="touchUpInside" id="8t2-zF-e0l"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion4" modalPresentationStyle="fullScreen" id="sxM-dm-68t"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion4" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="sxM-dm-68t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsn-87-WMg">
@@ -152,7 +152,7 @@
                                 </state>
                                 <connections>
                                     <action selector="toQustion:" destination="a6d-IT-8Zp" eventType="touchUpInside" id="opc-Jk-aCb"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion1" modalPresentationStyle="fullScreen" id="6EO-aP-E2k"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toQuestion1" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="6EO-aP-E2k"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="葉っぱ" translatesAutoresizingMaskIntoConstraints="NO" id="8cd-JI-PLl">
@@ -261,12 +261,12 @@
                         <outlet property="sentence" destination="ASb-9B-kJ4" id="qLJ-Ph-jPM"/>
                         <outlet property="toTry" destination="vsn-87-WMg" id="BX8-oe-btW"/>
                         <outlet property="word" destination="65X-Pi-Ruz" id="qYR-7Y-tMa"/>
-                        <segue destination="aVO-9g-Fow" kind="presentation" identifier="toBeforeTry" id="o3b-oh-zaB"/>
+                        <segue destination="aVO-9g-Fow" kind="presentation" identifier="toBeforeTry" modalTransitionStyle="crossDissolve" id="o3b-oh-zaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLu-EC-DGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359.4202898550725" y="46.875"/>
+            <point key="canvasLocation" x="-358" y="50"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -438,7 +438,7 @@
                         <outlet property="retry" destination="cAh-Gu-9tq" id="TSe-Nj-Jzx"/>
                         <outlet property="shiji" destination="1qK-ZW-Qwo" id="hn3-Rb-Zap"/>
                         <outlet property="time" destination="reh-bq-C2d" id="lzs-7g-aMb"/>
-                        <segue destination="05T-Om-JBZ" kind="presentation" identifier="toSecond" modalPresentationStyle="fullScreen" id="a2i-PF-O1x"/>
+                        <segue destination="05T-Om-JBZ" kind="presentation" identifier="toSecond" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="a2i-PF-O1x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -602,7 +602,7 @@
                         <outlet property="question2" destination="Juu-s4-DBT" id="XH3-16-I36"/>
                         <outlet property="shiji" destination="PKL-I0-txo" id="Rz3-qn-6e6"/>
                         <outlet property="time" destination="1Zs-9j-pSa" id="3RW-hA-G15"/>
-                        <segue destination="BVh-MS-DR3" kind="presentation" identifier="toTryResult" modalPresentationStyle="fullScreen" id="9ay-qS-805"/>
+                        <segue destination="BVh-MS-DR3" kind="presentation" identifier="toTryResult" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="9ay-qS-805"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIS-qH-M5F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -829,7 +829,7 @@
                                 </state>
                                 <connections>
                                     <action selector="YesAction:" destination="aVO-9g-Fow" eventType="touchUpInside" id="rGy-as-bxW"/>
-                                    <segue destination="bAR-wl-xb8" kind="presentation" identifier="toTry" id="pL5-5a-ExT"/>
+                                    <segue destination="bAR-wl-xb8" kind="presentation" identifier="toTry" modalTransitionStyle="crossDissolve" id="pL5-5a-ExT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昇段試験" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkV-6k-JFB">
