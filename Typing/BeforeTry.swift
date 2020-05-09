@@ -18,11 +18,11 @@ class BeforeTry: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var yes: UIButton!
     var rankNum = 0
     var audioPlayer: AVAudioPlayer!
-    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
+    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","殿堂入り"]
     
-    let up = ["lpm100以上","lpm130以上","lpm150以上","lpm170以上","lpm190以上","lpm210以上","lpm220以上","lpm230以上","lpm240以上","lpm250以上","lpm260以上"]
+    let up = ["80文字/分","110文字/分","130文字/分","150文字/分","170文字/分","190文字/分","210文字/分","220文字/分","230文字/分","250文字/分","なし"]
     
-    let down = ["なし","lpm80未満","lpm90未満","lpm100未満","lpm120未満","lpm130未満","lpm140未満","lpm150未満","lpm160未満","lpm170未満","lpm180未満"]
+    let down = ["なし","80文字/分","110文字/分","130文字/分","150文字/分","170文字/分","190文字/分","210文字/分","220文字/分","230文字/分","なし"]
     
     var tryCount = 0
     

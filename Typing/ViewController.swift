@@ -1045,7 +1045,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 }
                 
                if choice == 1{
-                var randomNumber = Int.random(in: 1..<47)
+                var randomNumber = Int.random(in: 1..<48)
                   switch (randomNumber) {
                     case 1:
                     question = "夢を見るから、人生は輝く"
@@ -1134,7 +1134,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     case 11:
                     question = "メンタルが変われば行動が変わる"
                     ans1 = "めんたるがかわればこうどうがかわる"
-                    ans2 = "めんたるかがかわれはばこうとどうがかわる"
+                    ans2 = "めんたるかがかわれはばこうとどうかがかわる"
                     person = "長友佑都"
                     break
 
@@ -1260,7 +1260,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     case 27:
                     question = "立て、立つんだジョー！"
                     ans1 = "たて、たつんだじょー！"
-                    ans2 = "たて、たつんただしじよー！"
+                    ans2 = "たて、たつんただしじよょー！"
                     person = "あしたのジョー"
                     break
 
@@ -1278,7 +1278,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     question = "やられたらやり返す、倍返しだ"
                     ans1 = "やられたらやりかえす、ばいがえしだ"
                     ans2 = "やられたらやりかえす、はばいかがえしただ"
-                    person = ""
+                    person = "半沢直樹"
                     break
 
 
@@ -1358,7 +1358,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                   case 40:
                       question = "赤信号みんなで渡れば怖くない"
                       ans1 = "あかしんごうみんなでわたればこわくない"
-                      ans2 = "あこごうみんなてでわたれはばこわくない"
+                      ans2 = "あかしんこごうみんなてでわたれはばこわくない"
                       person = "ビートたけし"
                       break
                   case 41:
@@ -1401,15 +1401,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                       ans2 = "かきくえはばかねかがなるなりほうりゆゅうしじ"
                       person = "正岡子規"
                       break
-                  case 47:
+                  default:
                       question = "古池や蛙飛び込む水の音"
                       ans1 = "ふるいけやかわずとびこむみずのおと"
                       ans2 = "ふるいけやかわすずとひびこむみすずのおと"
                       person = "松尾芭蕉"
                         
                       break
-                  default:
-                    <#code#>
                 }
                }
                

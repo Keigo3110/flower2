@@ -60,7 +60,7 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     }
     
     
-   let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
+   let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","殿堂入り"]
     
    var rankNumber = 0
     
