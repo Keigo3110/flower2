@@ -8,9 +8,9 @@
 
 import UIKit
 import GoogleMobileAds
-   
+import AVFoundation
 
-class SecondViewController: UIViewController, GADInterstitialDelegate{
+class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegate{
     
     @IBOutlet weak var mis: UILabel!
     @IBOutlet weak var usedTime: UILabel!
@@ -26,6 +26,8 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
     
     @IBOutlet weak var Twitter: UIButton!
     @IBOutlet weak var bannerView: GADBannerView!
+
+    
     
    
     var misss:String = ""
@@ -37,6 +39,25 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
     var flowers = 0
     let flowersName = ["花1", "花2", "花3", "花4", "花5"]
     var interstitial: GADInterstitial!
+    var audioPlayer: AVAudioPlayer!
+    
+    func music(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               audioPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           audioPlayer.delegate = self
+                      audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
     
     
     func createAndLoadInterstitial() -> GADInterstitial {
@@ -56,6 +77,8 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        
         interstitial = createAndLoadInterstitial()
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
@@ -74,9 +97,11 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
         wpm.text = String(round(60*letterCount2/usedTimee))
         
         if time == true{
+            music(sound: "時間切れ")
             timeOut.text = "残念！\n時間切れ！！"
             flower.image = UIImage(named: flowersName[flowers])
         }else{
+            music(sound: "まる")
             timeOut.text = "満開！\n大変素晴らしいです"
             flower.image = UIImage(named: flowersName[flowers])
         }
@@ -87,7 +112,7 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
     
     
     @IBAction func back(_ sender: Any) {
-        
+        music(sound: "button")
         let vc1 = self.presentingViewController as! ViewController
         vc1.count = 0
         vc1.abc = true
@@ -106,6 +131,7 @@ class SecondViewController: UIViewController, GADInterstitialDelegate{
     }
     
     @IBAction func backtoHome(_ sender: Any) {
+        music(sound: "button")
         if interstitial.isReady {
                  interstitial.present(fromRootViewController: self)
                } else {

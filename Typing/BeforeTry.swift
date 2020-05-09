@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class BeforeTry: UIViewController {
+class BeforeTry: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var danni: UILabel!
     @IBOutlet weak var jouken1: UILabel!
@@ -16,7 +17,7 @@ class BeforeTry: UIViewController {
     @IBOutlet weak var no: UIButton!
     @IBOutlet weak var yes: UIButton!
     var rankNum = 0
-    
+    var audioPlayer: AVAudioPlayer!
     let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
     
     let up = ["lpm100以上","lpm130以上","lpm150以上","lpm170以上","lpm190以上","lpm210以上","lpm220以上","lpm230以上","lpm240以上","lpm250以上","lpm260以上"]
@@ -24,6 +25,24 @@ class BeforeTry: UIViewController {
     let down = ["なし","lpm80未満","lpm90未満","lpm100未満","lpm120未満","lpm130未満","lpm140未満","lpm150未満","lpm160未満","lpm170未満","lpm180未満"]
     
     var tryCount = 0
+    
+    func music(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               audioPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           audioPlayer.delegate = self
+                      audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
 
     
     
@@ -41,11 +60,13 @@ class BeforeTry: UIViewController {
     }
     
     @IBAction func NoAction(_ sender: Any) {
+        music(sound: "button")
         self.dismiss(animated: true, completion: nil)
     }
     
 
     @IBAction func YesAction(_ sender: Any) {
+        music(sound: "button")
         tryCount += 1
         let top = self.presentingViewController as! Top
         top.tryCount = tryCount

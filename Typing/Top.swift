@@ -12,6 +12,7 @@ import AVFoundation
 
 
 
+
 class Top: UIViewController, AVAudioPlayerDelegate{
     
     let exp = [0,0,50,56,62,120,130,142,156,172,190,210,1000]
@@ -39,6 +40,24 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     var judge = false
     
     @IBOutlet weak var bannerView: GADBannerView!
+    
+    func music(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               audioPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           audioPlayer.delegate = self
+                      audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
     
     
    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","十段"]
@@ -69,27 +88,6 @@ class Top: UIViewController, AVAudioPlayerDelegate{
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         
         
-        // 再生する audio ファイルのパスを取得
-            let audioPath = Bundle.main.path(forResource: "button01a", ofType:"mp3")!
-            let audioUrl = URL(fileURLWithPath: audioPath)
-            
-            
-            // auido を再生するプレイヤーを作成する
-            var audioError:NSError?
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
-            } catch let error as NSError {
-                audioError = error
-                audioPlayer = nil
-            }
-            
-            // エラーが起きたとき
-            if let error = audioError {
-                print("Error")
-            }
-            
-            audioPlayer.delegate = self
-            audioPlayer.prepareToPlay()
         //UD.set(pastDay1, forKey: "today")
         judgeDate()
         userDefaults1.register(defaults: ["tryCount" : 0])
@@ -141,25 +139,29 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     }
     
     @IBAction func toQustion(_ sender: UIButton) {
-        audioPlayer.play()
+        music(sound: "button")
         performSegue(withIdentifier: "toQuestion1", sender: word)
     }
     
     @IBAction func toQuestion2(_ sender: UIButton) {
+        music(sound: "button")
          performSegue(withIdentifier: "toQuestion2", sender: sentence)
     }
     
     @IBAction func toQuestion3(_ sender: UIButton) {
+        music(sound: "button")
         performSegue(withIdentifier: "toQuestion3", sender: English)
     }
     
     @IBAction func toQuestion4(_ sender: UIButton) {
+        music(sound: "button")
         performSegue(withIdentifier: "toQuestion4", sender: anki)
     }
     
     @IBAction func toBeforeTry(_ sender: UIButton) {
         judgeDate()
         if tryCount <= 2 {
+            music(sound: "button")
             performSegue(withIdentifier: "toBeforeTry", sender: toTry)
         }else{
             let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "昇段試験は1日3回までです。", preferredStyle:  UIAlertController.Style.alert)

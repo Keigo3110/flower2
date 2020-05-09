@@ -8,8 +8,9 @@
 
 import UIKit
 import GoogleMobileAds
+import AVFoundation
 
-class TryResult: UIViewController, GADInterstitialDelegate{
+class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegate{
     
     @IBOutlet weak var gouhi: UILabel!
     @IBOutlet weak var comment: UILabel!
@@ -22,8 +23,7 @@ class TryResult: UIViewController, GADInterstitialDelegate{
     
     @IBOutlet weak var bannerView: GADBannerView!
     
-    
-
+    var audioPlayer: AVAudioPlayer!
     var lpmNum:Double = 0
     var usedTimeNum:Double = 0
     var missNum:Int = 0
@@ -47,6 +47,24 @@ class TryResult: UIViewController, GADInterstitialDelegate{
      
     }
     
+    func music(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               audioPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           audioPlayer.delegate = self
+                      audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
+    
     
     
     override func viewDidLoad() {
@@ -66,7 +84,7 @@ class TryResult: UIViewController, GADInterstitialDelegate{
     }
     
     @IBAction func goHome(_ sender: Any) {
-       
+        music(sound: "button")
         if interstitial.isReady {
                         interstitial.present(fromRootViewController: self)
                       } else {

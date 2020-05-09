@@ -7,12 +7,34 @@
 //
 
 import UIKit
+import AVFoundation
 
-
-class start: UIViewController {
+class start: UIViewController, AVAudioPlayerDelegate {
+    
 
     @IBOutlet weak var flower: UIImageView!
     @IBOutlet weak var happa: UIImageView!
+    var audioPlayer: AVAudioPlayer!
+    
+    
+    func music(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               audioPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           audioPlayer.delegate = self
+                      audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -25,7 +47,10 @@ class start: UIViewController {
         
     }
     
-
+    @IBAction func start(_ sender: Any) {
+        music(sound: "button")
+    }
+    
     /*
     // MARK: - Navigation
 

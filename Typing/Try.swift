@@ -8,9 +8,10 @@
 
 import UIKit
 import GoogleMobileAds
+import AVFoundation
 
 
-class Try: UIViewController {
+class Try: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var back: UIButton!
@@ -22,7 +23,8 @@ class Try: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     
 
-    
+    var audioPlayer: AVAudioPlayer!
+    var bgmPlayer: AVAudioPlayer!
     var count2 = 0
     var abc2 = true
     var quesCount2 = 0
@@ -32,6 +34,7 @@ class Try: UIViewController {
     var lpm2:Double = 0
     var rankNum2 = 0
     var upOrDown = 0
+    var bgm = 0
     var TimerStartOrNot = false
     let userDefaults3 = UserDefaults.standard
     let up:[Double] = [100,130,150,170,190,210,220,230,240,250,260,270,280,290,300,310,320]
@@ -39,6 +42,42 @@ class Try: UIViewController {
     
     
     var timerr2:[Int] = [30,0,0]
+    
+    func music(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               audioPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           audioPlayer.delegate = self
+                      audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
+    
+    func bgmmusic(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               bgmPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               bgmPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           bgmPlayer.delegate = self
+                      bgmPlayer.prepareToPlay()
+        bgmPlayer.play()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +105,8 @@ class Try: UIViewController {
     
     @objc func timer(){
         if (timerr2[0] == 0 && timerr2[1] == 0 && timerr2[2] == 0) {
+            myTimer2.invalidate()
+            bgmPlayer.stop()
             performSegue(withIdentifier: "toTryResult", sender: nil)
             
         } else {
@@ -92,6 +133,7 @@ class Try: UIViewController {
     
     
     @IBAction func dismiss(_ sender: Any) {
+        music(sound: "button")
         let top = self.presentingViewController?.presentingViewController as! Top
         
         if rankNum2 >= 1{
@@ -114,6 +156,12 @@ class Try: UIViewController {
         shiji.isHidden = true
         myTimer2 = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector:#selector(timer) , userInfo: nil, repeats: true)
         TimerStartOrNot = true
+        if bgm == 0 {
+            bgm += 1
+            bgmmusic(sound: "草原の小鳥")
+        } else{
+            bgmPlayer.play()
+        }
     }
     
     @IBAction func EditingChanged(_ sender: Any) {
@@ -123,6 +171,7 @@ class Try: UIViewController {
     func judge2(){
         if quesCount2<1{
         if field.text! == question2.text!{
+            music(sound: "パッ")
             Random2()
             abc2 = true
             field.text = ""
@@ -143,7 +192,7 @@ class Try: UIViewController {
         }else{
             if field.text! == question2.text!{
                 
-               
+                bgmPlayer.stop()
                 field.text = ""
                 ans2.text = ""
                 quesCount2 = 0
@@ -165,13 +214,16 @@ class Try: UIViewController {
                     rankNum2 += 1
                     SaveRankNum2(num: rankNum2)
                     upOrDown = 0
+                    music(sound: "まる")
                 }else if lpm2 >= down[rankNum2]{
                     SaveRankNum2(num: rankNum2)
                     upOrDown = 1
+                    music(sound: "まる")
                 }else{
                     rankNum2 -= 1
                     SaveRankNum2(num: rankNum2)
                     upOrDown = 2
+                    music(sound: "時間切れ")
                     
                 }
                 

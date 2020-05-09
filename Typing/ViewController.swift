@@ -9,8 +9,9 @@
 import UIKit
 import GoogleMobileAds
 import AudioToolbox
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     
     @IBOutlet weak var field: UITextField!
@@ -52,11 +53,52 @@ class ViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     let qNum = [10,5,10,10]
     var flowers = 0
-    
+    var audioPlayer: AVAudioPlayer!
+    var bgmPlayer: AVAudioPlayer!
+    var bgm = 0
 
     var timerr: [Int] = [30,0,0]
     var timerr2:Double = 0.1
     @IBOutlet weak var time: UILabel!
+    
+    
+    
+    func music(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               audioPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           audioPlayer.delegate = self
+                      audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
+    
+    func bgmmusic(sound: String) {
+        let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        var audioError:NSError?
+           do {
+               bgmPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+           } catch let error as NSError {
+               audioError = error
+               bgmPlayer = nil
+           }
+           if let error = audioError {
+                          print("Error")
+                      }
+           bgmPlayer.delegate = self
+                      bgmPlayer.prepareToPlay()
+        bgmPlayer.play()
+    }
+    
     
    func shortVibrate() {
        AudioServicesPlaySystemSound(1003);
@@ -105,8 +147,9 @@ class ViewController: UIViewController {
          if (timerr[0] == 0 && timerr[1] == 0 && timerr[2] == 0) {
              finish = true
              myTimer.invalidate()
-             performSegue(withIdentifier: "toSecond", sender: nil)
+             bgmPlayer.stop()
              
+             performSegue(withIdentifier: "toSecond", sender: nil)
              
          } else {
              if timerr[2] > 0 {
@@ -148,6 +191,12 @@ class ViewController: UIViewController {
          stop = true
          retry.setTitle("Stop", for: .normal)
          shiji.isHidden = true
+        if bgm == 0 {
+            bgm += 1
+            bgmmusic(sound: "草原の小鳥")
+        } else{
+            bgmPlayer.play()
+        }
          
          if(choice == 3){
              myTimer2 = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer2) , userInfo: nil, repeats: true)
@@ -160,7 +209,6 @@ class ViewController: UIViewController {
                     resumeLayer(layer: jouro.layer)
                     animation = true
                 }
-
          
          
      }
@@ -194,7 +242,7 @@ class ViewController: UIViewController {
 
      
      @IBAction func retryyy(_ sender: Any) {
-         
+         music(sound: "button")
          if started == false{
              count = 0
              abc = true
@@ -210,6 +258,7 @@ class ViewController: UIViewController {
          }
          if started == true && stop == true{
              myTimer.invalidate()
+             bgmPlayer.pause()
              animation = false
              stop = false
              retry.setTitle("Retry", for: .normal)
@@ -239,6 +288,7 @@ class ViewController: UIViewController {
          
      if quesCount < qNum[choice]-1 {
          if field.text! == ans1{
+             music(sound: "パッ")
              field.text = ""
              quesCount += 1
              letterCount += question.count
@@ -266,6 +316,8 @@ class ViewController: UIViewController {
                  quesCount = 0
                  letterCount += question.count
                  flowers = 4
+                 bgm = 0
+                 bgmPlayer.stop()
                  myTimer.invalidate()
                  
                  
@@ -362,7 +414,16 @@ class ViewController: UIViewController {
      
      
      @IBAction func back(_ sender: Any) {
+         music(sound: "button")
+         if bgm != 0{
+            bgmPlayer.stop()
+         }
+        if stop == true{
+            myTimer.invalidate()
+        }
          dismiss(animated: true, completion: nil)
+        
+        
          
      }
      
@@ -948,7 +1009,7 @@ class ViewController: UIViewController {
                         break
                     case 96:
                         question = "段位"
-                        ans1 = "ただんい"
+                        ans1 = "だんい"
                         ans2 = "ただんい"
                         
                         break
