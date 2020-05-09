@@ -1409,7 +1409,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                         
                       break
                 }
-               }
+            }
                
                if choice == 2{
                 var randomNumber = Int.random(in: 1..<100)
