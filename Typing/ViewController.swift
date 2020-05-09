@@ -465,6 +465,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
      
         func Random(){
+            func Random(){
             var randomNumber = Int.random(in: 1..<100)
                if choice == 0{
                   switch (randomNumber) {
@@ -555,9 +556,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                         ans2 = "うつくしい"
                         break
                     case 16:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "笑顔"
+                        ans1 = "えがお"
+                        ans2 = "えかがお"
                           
                         break
                     case 17:
@@ -750,7 +751,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     case 50:
                         question = "コピーする"
                         ans1 = "こぴーする"
-                        ans2 = "こひぴーする"
+                        ans2 = "こひびぴーする"
                         
                         break
                     case 51:
@@ -841,7 +842,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     case 66:
                         question = "コンパ"
                         ans1 = "こんぱ"
-                        ans2 = "こんはぱ"
+                        ans2 = "こんはばぱ"
                         break
                     case 67:
                         question = "合宿"
@@ -1009,7 +1010,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                         break
                     case 96:
                         question = "段位"
-                        ans1 = "だんい"
+                        ans1 = "ただんい"
                         ans2 = "ただんい"
                         
                         break
@@ -1033,7 +1034,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                   default:
                     question = "アプリ"
                     ans1 = "あぷり"
-                    ans2 = "あふぷり"
+                    ans2 = "あふぶぷり"
                     break
                 }
                }
@@ -1641,578 +1642,581 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                if choice == 3{
                   switch (randomNumber) {
                   case 1:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "コンピューター"
+                      ans1 = "こんぴゅーたー"
+                      ans2 = "こんひびぴゆゅーたー"
                       
                       break
                   case 2:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "教科書"
+                      ans1 = "きょうかしょ"
+                      ans2 = "きよょうかしよょ"
                       
                       break
                   case 3:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "スマートフォン"
+                      ans1 = "すまーとふぉん"
+                      ans2 = "すまーとふおぉん"
                       break
                   case 4:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "単語帳"
+                      ans1 = "たんごちょう"
+                      ans2 = "たんこごちよょう"
                       
                       break
                   case 5:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "アルバイト"
+                      ans1 = "あるばいと"
+                      ans2 = "あるはばいと"
                       
                       break
                   case 6:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "アルコール"
+                      ans1 = "あるこーる"
+                      ans2 = "あるこーる"
                       break
                   case 7:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "写真"
+                      ans1 = "しゃしん"
+                      ans2 = "しやゃしん"
                         
                       break
                   case 8:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "カレンダー"
+                      ans1 = "かれんだー"
+                      ans2 = "かれんただー"
                         
                       break
                   case 9:
-                      question = ""
-                      ans1 = ""
-                      ans2 = ""
+                      question = "ハンカチ"
+                      ans1 = "はんかち"
+                      ans2 = "はんかち"
                       break
                     
                     case 10:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "専門店"
+                        ans1 = "せんもんてん"
+                        ans2 = "せんもんてん"
                         
                         break
                     case 11:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "いい天気"
+                        ans1 = "いいてんき"
+                        ans2 = "いいてんき"
                         
                         break
                     case 12:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "こんにちは"
+                        ans1 = "こんにちは"
+                        ans2 = "こんにちは"
                         break
                     case 13:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "体調はいかがですか"
+                        ans1 = "たいちょうはいかがですか"
+                        ans2 = "たいちよょうはいかかがてですか"
                         
                         break
                     case 14:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "おはようございます"
+                        ans1 = "おはようございます"
+                        ans2 = "おはようこごさざいます"
                         
                         break
                     case 15:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "夏休み"
+                        ans1 = "なつやすみ"
+                        ans2 = "なつやすみ"
                         break
                     case 16:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "オンリーワン"
+                        ans1 = "おんりーわん"
+                        ans2 = "おんりーわん"
                           
                         break
                     case 17:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "料理をする"
+                        ans1 = "りょうりをする"
+                        ans2 = "りよょうりをする"
                           
                         break
                     case 18:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "感動する"
+                        ans1 = "かんどうする"
+                        ans2 = "かんとどうする"
                         break
                     case 19:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "精一杯"
+                        ans1 = "せいいっぱい"
+                        ans2 = "せいいつっはばぱい"
                         
                         break
                     case 20:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "漫画を読む"
+                        ans1 = "まんがをよむ"
+                        ans2 = "まんかがをよむ"
                         
                         break
                     case 21:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "トイレに行く"
+                        ans1 = "といれにいく"
+                        ans2 = "といれにいく"
                         break
                     case 22:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "数学"
+                        ans1 = "すうがく"
+                        ans2 = "すうかがく"
                         
                         break
                     case 23:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "趣味はテニスです"
+                        ans1 = "しゅみはてにすです"
+                        ans2 = "しゆゅみはてにすてです"
                         
                         break
                     case 24:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "買い物に行く"
+                        ans1 = "かいものにいく"
+                        ans2 = "かいものにいく"
                         break
                     case 25:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "活動を再開する"
+                        ans1 = "かつどうをさいかいする"
+                        ans2 = "かつとどうをさいかいする"
                           
                         break
                     case 26:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "予防する"
+                        ans1 = "よぼうする"
+                        ans2 = "よほぼうする"
                           
                         break
                     case 27:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "分析をする"
+                        ans1 = "ぶんせきをする"
+                        ans2 = "ふぶんせきをする"
                         break
                     case 28:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "好きな曲をきく"
+                        ans1 = "すきなきょくをきく"
+                        ans2 = "すきなきよょくをきく"
                         
                         break
                     case 29:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "映画を観る"
+                        ans1 = "えいがをみる"
+                        ans2 = "えいかがをみる"
                         
                         break
                     case 30:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "お茶を飲む"
+                        ans1 = "おちゃをのむ"
+                        ans2 = "おちやゃをのむ"
                         break
                     case 31:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "髪を乾かす"
+                        ans1 = "かみをかわかす"
+                        ans2 = "かみをかわかす"
                         
                         break
                     case 32:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "ダイエットする"
+                        ans1 = "だいえっとする"
+                        ans2 = "ただいえつっとする"
                         
                         break
                     case 33:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "ゲームをする"
+                        ans1 = "げーむをする"
+                        ans2 = "けげーむをする"
                         break
                     case 34:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "話し合いを行う"
+                        ans1 = "はなしあいをおこなう"
+                        ans2 = "はなしあいをおこなう"
                           
                         break
                     case 35:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "ノートを開く"
+                        ans1 = "のーとをひらく"
+                        ans2 = "のーとをひらく"
                           
                         break
                     case 36:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "携帯を落とす"
+                        ans1 = "けいたいをおとす"
+                        ans2 = "けいたいをおとす"
                         break
                     case 37:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "お腹がすいた"
+                        ans1 = "おなかがすいた"
+                        ans2 = "おなかかがすいた"
                         
                         break
                     case 38:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "怪我をする"
+                        ans1 = "けがをする"
+                        ans2 = "けかがをする"
                         
                         break
                     case 39:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "胸を張る"
+                        ans1 = "むねをはる"
+                        ans2 = "むねをはる"
                         break
                     case 40:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "家を出る"
+                        ans1 = "いえをでる"
+                        ans2 = "いえをてでる"
                         
                         break
                     case 41:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "爪を切る"
+                        ans1 = "つめをきる"
+                        ans2 = "つめをきる"
                         
                         break
                     case 42:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "パソコンを買う"
+                        ans1 = "ぱそこんをかう"
+                        ans2 = "はばぱそこんをかう"
                         break
                     case 43:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "希望を持つ"
+                        ans1 = "きぼうをもつ"
+                        ans2 = "きほぼうをもつ"
                           
                         break
                     case 44:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "原因を分析する"
+                        ans1 = "げんいんをぶんせきする"
+                        ans2 = "けげんいんをふぶんせきする"
                           
                         break
                     case 45:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "メモをする"
+                        ans1 = "めもをする"
+                        ans2 = "めもをする"
                         break
                     case 46:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "布団を干す"
+                        ans1 = "ふとんをほす"
+                        ans2 = "ふとんをほす"
                         
                         break
                     case 47:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "メッセージを送る"
+                        ans1 = "めっせーじをおくる"
+                        ans2 = "めつっせーしじをおくる"
                         
                         break
                     case 48:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "大きな箱"
+                        ans1 = "おおきなはこ"
+                        ans2 = "おおきなはこ"
                         break
                     case 49:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "開発する"
+                        ans1 = "かいはつする"
+                        ans2 = "かいはつする"
                         
                         break
                     case 50:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "時計を見る"
+                        ans1 = "とけいをみる"
+                        ans2 = "とけいをみる"
                         
                         break
                     case 51:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "画面を見る"
+                        ans1 = "がめんをみる"
+                        ans2 = "かがめんをみる"
                         break
                     case 52:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "楽しい思い出"
+                        ans1 = "たのしいおもいで"
+                        ans2 = "たのしいおもいてで"
                           
                         break
                     case 53:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "お金を拾う"
+                        ans1 = "おかねをひろう"
+                        ans2 = "おかねをひろう"
                           
                         break
                     case 54:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "悲しい記憶"
+                        ans1 = "かなしいきおく"
+                        ans2 = "かなしいきおく"
                         break
                     case 55:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "会議に出る"
+                        ans1 = "かいぎにでる"
+                        ans2 = "かいきぎにてでる"
                         
                         break
                     case 56:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "指を鳴らす"
+                        ans1 = "ゆびをならす"
+                        ans2 = "ゆひびをならす"
                         
                         break
                     case 57:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "人に会う"
+                        ans1 = "ひとにあう"
+                        ans2 = "ひとにあう"
                         break
                     case 58:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "美しい景色"
+                        ans1 = "うつくしいけしき"
+                        ans2 = "うつくしいけしき"
                         
                         break
                     case 59:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "ごみを捨てる"
+                        ans1 = "ごみを捨てる"
+                        ans2 = "こごみをすてる"
                         
                         break
                     case 60:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "気になる"
+                        ans1 = "きになる"
+                        ans2 = "きになる"
                         break
                     case 61:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "コートを着る"
+                        ans1 = "こーとをきる"
+                        ans2 = "こーとをきる"
                           
                         break
                     case 62:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "散歩する"
+                        ans1 = "さんぽする"
+                        ans2 = "さんほぼぽする"
                           
                         break
                     case 63:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "レベルが違う"
+                        ans1 = "れべるがちがう"
+                        ans2 = "れへべるかがちかがう"
                         break
                     case 64:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "ゲームに勝つ"
+                        ans1 = "げーむにかつ"
+                        ans2 = "けげーむにかつ"
                         
                         break
                     case 65:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "プレゼンをする"
+                        ans1 = "ぷれぜんをする"
+                        ans2 = "ふぶぷれせぜんをする"
                         
                         break
                     case 66:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "問題を解く"
+                        ans1 = "もんだいをとく"
+                        ans2 = "もんただいをとく"
                         break
                     case 67:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "項目に分ける"
+                        ans1 = "こうもくにわける"
+                        ans2 = "こうもくにわける"
                         
                         break
                     case 68:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "ファイルを作る"
+                        ans1 = "ふぁいるをつくる"
+                        ans2 = "ふあぁいるをつくる"
                         
                         break
                     case 69:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "折り紙をする"
+                        ans1 = "おりがみをする"
+                        ans2 = "おりかがみをする"
                         break
                     case 70:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "整理をする"
+                        ans1 = "せいりをする"
+                        ans2 = "せいりをする"
                           
                         break
                     case 71:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "お風呂に入る"
+                        ans1 = "おふろにはいる"
+                        ans2 = "おふろにはいる"
                           
                         break
                     case 72:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "ペン回しをする"
+                        ans1 = "ぺんまわしをする"
+                        ans2 = "へべぺんまわしをする"
                         break
                     case 73:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "肉を焼く"
+                        ans1 = "にくをやく"
+                        ans2 = "にくをやく"
                         
                         break
                     case 74:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "コードを書く"
+                        ans1 = "こーどをかく"
+                        ans2 = "こーとどをかく"
                         
                         break
                     case 75:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "裁判を行う"
+                        ans1 = "さいばんをおこなう"
+                        ans2 = "さいはばんをおこなう"
                         break
                     case 76:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "出席する"
+                        ans1 = "しゅっせきする"
+                        ans2 = "しゆゅつっせきする"
                         
                         break
                     case 77:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "お店に行く"
+                        ans1 = "おみせにいく"
+                        ans2 = "おみせにいく"
                         
                         break
                     case 78:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "本を読む"
+                        ans1 = "ほんをよむ"
+                        ans2 = "ほんをよむ"
                         break
                     case 79:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "友達と遊ぶ"
+                        ans1 = "ともだちとあそぶ"
+                        ans2 = "ともただちとあそふぶ"
                           
                         break
                     case 80:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "息を吸う"
+                        ans1 = "いきをすう"
+                        ans2 = "いきをすう"
                           
                         break
                     case 81:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "難しい問題"
+                        ans1 = "むずかしいもんだい"
+                        ans2 = "むすずかしいもんただい"
                         break
                     case 82:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "厳しい世界"
+                        ans1 = "きびしいせかい"
+                        ans2 = "きひびしいせかい"
                         
                         break
                     case 83:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "大学受験"
+                        ans1 = "だいがくじゅけん"
+                        ans2 = "ただいかがくしじゆゅけん"
                         
                         break
                     case 84:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "計画を立てる"
+                        ans1 = "けいかくをたてる"
+                        ans2 = "けいかくをたてる"
                         break
                     case 85:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "勝負に出る"
+                        ans1 = "しょうぶにでる"
+                        ans2 = "しょうふぶにてでる"
                         
                         break
                     case 86:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "色をつける"
+                        ans1 = "いろをつける"
+                        ans2 = "いろをつける"
                         
                         break
                     case 87:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "電話に出る"
+                        ans1 = "でんわにでる"
+                        ans2 = "てでんわにてでる"
                         break
                     case 88:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "検討する"
+                        ans1 = "けんとうする"
+                        ans2 = "けんとうする"
                           
                         break
                     case 89:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "出演する"
+                        ans1 = "しゅつえんする"
+                        ans2 = "しゆゅつえんする"
                           
                         break
                     case 90:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "改革する"
+                        ans1 = "かいかくする"
+                        ans2 = "かいかくする"
                         break
                     case 91:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "暇をつぶす"
+                        ans1 = "ひまをつぶす"
+                        ans2 = "ひまをつふぶす"
                         break
                     case 92:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "気持ち良い"
+                        ans1 = "きもちよい"
+                        ans2 = "きもちよい"
                         
                         break
                     case 93:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "質問をする"
+                        ans1 = "しつもんをする"
+                        ans2 = "しつもんをする"
                         
                         break
                     case 94:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "時間に追われる"
+                        ans1 = "じかんにおわれる"
+                        ans2 = "しじかんにおわれる"
                         break
                     case 95:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "仕事に行く"
+                        ans1 = "しごとにいく"
+                        ans2 = "しこごとにいく"
                         
                         break
                     case 96:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "フォローする"
+                        ans1 = "ふぉろーする"
+                        ans2 = "ふおぉろーする"
                         
                         break
                     case 97:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "卒業する"
+                        ans1 = "そつぎょうする"
+                        ans2 = "そつきぎよょうする"
                         break
                     case 98:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "開拓する"
+                        ans1 = "かいたくする"
+                        ans2 = "かいたくする"
                           
                         break
                     case 99:
-                        question = ""
-                        ans1 = ""
-                        ans2 = ""
+                        question = "証明する"
+                        ans1 = "しょうめいする"
+                        ans2 = "しよょうめいする"
                           
                         break
                   default:
-                    question = ""
-                    ans1 = ""
-                    ans2 = ""
+                    question = "優れている"
+                    ans1 = "すぐれている"
+                    ans2 = "すくぐれている"
                     break
                   }
                }
                
                
                   
+               
+                  
 
 
+}
 }
 }
