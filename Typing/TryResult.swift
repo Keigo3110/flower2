@@ -18,11 +18,12 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
     @IBOutlet weak var missLabel: UILabel!
     @IBOutlet weak var goHome: UIButton!
     @IBOutlet weak var newRank: UILabel!
+    @IBOutlet weak var twitter: UIButton!
     
     @IBOutlet weak var flower: UIImageView!
     
     @IBOutlet weak var bannerView: GADBannerView!
-    
+    var twiwpm:Double = 0
     var audioPlayer: AVAudioPlayer!
     var lpmNum:Double = 0
     var usedTimeNum:Double = 0
@@ -97,5 +98,13 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
       
     }
     
-
+    @IBAction func twitter(_ sender: Any) {
+        let text = "あなたのフリックは1分間に\( lpmNum)文字、段位は\(rankName[new])です！\nhttps://lemonsmash.studio.design/members\n#flower"
+        let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        if let encodedText = encodedText,
+            let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
 }
