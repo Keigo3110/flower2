@@ -35,8 +35,8 @@
                                     <constraint firstAttribute="height" constant="470" id="i49-kZ-Q4e"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVz-W0-yV9">
-                                <rect key="frame" x="85" y="720" width="244" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVz-W0-yV9">
+                                <rect key="frame" x="67" y="648" width="293" height="176"/>
                                 <fontDescription key="fontDescription" name="Keifont" family="Keifont" pointSize="24"/>
                                 <state key="normal" title="Tap Here To Start !!">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,8 +65,10 @@
                         <viewLayoutGuide key="safeArea" id="GSg-42-ZhR"/>
                     </view>
                     <connections>
+                        <outlet property="Button" destination="EVz-W0-yV9" id="wE8-Dr-xAe"/>
                         <outlet property="flower" destination="TLD-Bl-qaY" id="bTh-KA-C3I"/>
                         <outlet property="happa" destination="7vn-z4-4hj" id="XDa-zg-iel"/>
+                        <outlet property="label" destination="EVz-W0-yV9" id="3RP-6j-Rbp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1f-Zw-Fsm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -478,9 +480,8 @@
                         <outlet property="flower" destination="0fU-ds-2bu" id="Yk6-lg-a1Z"/>
                         <outlet property="good" destination="HvM-eE-iH7" id="rzW-w1-fzU"/>
                         <outlet property="jouro" destination="hc3-TD-K1B" id="9uw-dL-zZX"/>
-                        <outlet property="person" destination="IEn-wK-WR9" id="fCt-EA-GXN"/>
                         <outlet property="personLabel" destination="IEn-wK-WR9" id="Eeu-5m-DIa"/>
-                        <outlet property="personView" destination="IEn-wK-WR9" id="JuS-5C-q3N"/>
+                        <outlet property="personView" destination="ZTw-Z1-N56" id="eGG-c0-LyH"/>
                         <outlet property="questionLabel" destination="fL4-rV-swo" id="iYf-4C-a06"/>
                         <outlet property="retry" destination="cAh-Gu-9tq" id="TSe-Nj-Jzx"/>
                         <outlet property="shiji" destination="1qK-ZW-Qwo" id="hn3-Rb-Zap"/>

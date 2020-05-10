@@ -18,7 +18,7 @@ class BeforeTry: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var yes: UIButton!
     var rankNum = 0
     var audioPlayer: AVAudioPlayer!
-    let rankName = ["一級","初段","二段","三段","四段","五段","六段","七段","八段","九段","殿堂入り"]
+    let rankName = ["現在の段位は\n一級\nアマチュア","初段","二段","三段","四段","五段","六段","七段","八段","九段","殿堂入り"]
     
     let up = ["80文字/分","110文字/分","130文字/分","150文字/分","170文字/分","190文字/分","210文字/分","220文字/分","230文字/分","250文字/分","なし"]
     

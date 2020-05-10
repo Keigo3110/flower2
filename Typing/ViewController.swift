@@ -27,10 +27,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var jouro: UIImageView!
     @IBOutlet weak var counting: UILabel!
     @IBOutlet weak var personLabel: UILabel!
-    @IBOutlet weak var personView: UILabel!
-    
-    
-    
+    @IBOutlet weak var personView: UIImageView!
     
     
     
@@ -60,6 +57,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var bgmPlayer: AVAudioPlayer!
     var bgm = 0
     var person = ""
+    let tim:[Int] = [30,60,30,30]
 
     var timerr: [Int] = [30,0,0]
     var timerr2:Double = 0.1
@@ -126,6 +124,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
          questionLabel.text = question
          ansLabel.text = ans1
          retry.setTitle("Retry", for: .normal)
+        
+         timerr[0] = tim[choice]
          
          time.text = String(timerr[0])+":"+String(timerr[1])+String(timerr[2])
          
@@ -144,11 +144,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         counting.text = "\(quesCount+1)/\(qNum[choice])"
         
-        if choice == 1{
-            personView.isHidden = false
-        }else{
+        if choice != 1{
             personView.isHidden = true
         }
+        
         personLabel.text = person
          
      }
@@ -261,7 +260,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
              quesCount = 0
              usedTime1 = 0
              letterCount = 0
-             timerr = [30,0,0]
+             timerr = [tim[choice],0,0]
              stop = false
              
              
@@ -285,7 +284,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
              quesCount = 0
              usedTime1 = 0
              letterCount = 0
-             timerr = [30,0,0]
+             timerr = [tim[choice],0,0]
              stop = false
              
              
@@ -335,7 +334,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                  myTimer.invalidate()
                  
                  
-                 usedTime1 = 30 - Double(timerr[0]) - Double(timerr[1])/10 - Double(timerr[2])/100
+                 usedTime1 = Double(tim[choice]) - Double(timerr[0]) - Double(timerr[1])/10 - Double(timerr[2])/100
                  
                
                  

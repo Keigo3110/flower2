@@ -14,6 +14,7 @@ class start: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var flower: UIImageView!
     @IBOutlet weak var happa: UIImageView!
+    @IBOutlet weak var Button: UIButton!
     var audioPlayer: AVAudioPlayer!
     
     
@@ -41,6 +42,8 @@ class start: UIViewController, AVAudioPlayerDelegate {
         flower.image = UIImage(named: "花5")
         happa.image = UIImage(named:"葉っぱ")
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
+        
+       
 
         // Do any additional setup after loading the view.
         
@@ -51,14 +54,6 @@ class start: UIViewController, AVAudioPlayerDelegate {
         music(sound: "button")
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
-}
+
