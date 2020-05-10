@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import AVFoundation
 import AudioToolbox
 
@@ -22,7 +21,6 @@ class Try: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var shiji: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var field: UITextField!
-    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var jouro: UIImageView!
     @IBOutlet weak var flower: UIImageView!
     @IBOutlet weak var counting: UILabel!
@@ -96,9 +94,6 @@ class Try: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)

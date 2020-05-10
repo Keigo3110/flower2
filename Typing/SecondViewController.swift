@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import AVFoundation
 
-class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegate{
+class SecondViewController: UIViewController, AVAudioPlayerDelegate{
     
     @IBOutlet weak var mis: UILabel!
     @IBOutlet weak var usedTime: UILabel!
@@ -25,7 +24,7 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
     @IBOutlet weak var flower: UIImageView!
     
     @IBOutlet weak var Twitter: UIButton!
-    @IBOutlet weak var bannerView: GADBannerView!
+    
 
     @IBOutlet weak var line: UIButton!
     
@@ -39,7 +38,6 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
     var time = false
     var flowers = 0
     let flowersName = ["花1", "花2", "花3", "花4", "花5"]
-    var interstitial: GADInterstitial!
     var audioPlayer: AVAudioPlayer!
     
     func music(sound: String) {
@@ -61,18 +59,7 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
     }
     
     
-    func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-         interstitial.delegate = self
-         interstitial.load(GADRequest())
-         return interstitial
-       }
-       
-       func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-         interstitial = createAndLoadInterstitial()
-         self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        
-       }
+    
 
     
     override func viewDidLoad() {
@@ -80,10 +67,6 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
         super.viewDidLoad()
         
         
-        interstitial = createAndLoadInterstitial()
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
         
          self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         backHome.setBackgroundImage(UIImage(named:"木枠2"), for: .normal)
@@ -135,12 +118,8 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
     
     @IBAction func backtoHome(_ sender: Any) {
         music(sound: "button")
-        if interstitial.isReady {
-                 interstitial.present(fromRootViewController: self)
-               } else {
-                print("Ad wasn't ready")
-                 self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-               }
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+               
     }
     
     

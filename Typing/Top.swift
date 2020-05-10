@@ -7,15 +7,11 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import AVFoundation
-
-
-
 
 class Top: UIViewController, AVAudioPlayerDelegate{
     
-    let exp = [0,0,50,56,62,120,130,142,156,172,190,210,1000]
+    let exp = [0,0,1,2,4,7,130,142,156,172,190,210,1000]
     var level:Int = 0
     var expPoint2 = 0
     var tryCount = 0
@@ -39,7 +35,6 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     let pastDay1 = Date(timeIntervalSinceNow: -60 * 60 * 24)
     var judge = false
     
-    @IBOutlet weak var bannerView: GADBannerView!
     
     func music(sound: String) {
         let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
@@ -70,9 +65,6 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
        
         
         UD.register(defaults: ["today" : nowDay])
@@ -159,30 +151,7 @@ class Top: UIViewController, AVAudioPlayerDelegate{
     }
     
     @IBAction func toBeforeTry(_ sender: UIButton) {
-        judgeDate()
-        if tryCount <= 2 {
-            music(sound: "button")
-            performSegue(withIdentifier: "toBeforeTry", sender: toTry)
-        }else{
-            let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "昇段試験は1日3回までです。", preferredStyle:  UIAlertController.Style.alert)
-            
-                        let defaultAction: UIAlertAction = UIAlertAction(title: "制限解除", style: UIAlertAction.Style.default, handler:{
-            
-                            (action: UIAlertAction!) -> Void in
-                            print("OK")
-                        })
-            
-                        let cancelAction: UIAlertAction = UIAlertAction(title: "戻る", style: UIAlertAction.Style.cancel, handler: {
-                            (action: UIAlertAction!) -> Void in
-                            print("Cancel")
-                        })
-            
-                        alert.addAction(cancelAction)
-                        alert.addAction(defaultAction)
-            
-                        present(alert, animated: true, completion:  nil)
-            
-    }
+        performSegue(withIdentifier: "toBeforeTry", sender: toTry)
     }
     
     

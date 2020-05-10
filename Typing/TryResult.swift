@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 import AVFoundation
 
-class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegate{
+class TryResult: UIViewController, AVAudioPlayerDelegate{
     
     @IBOutlet weak var line: UIButton!
     @IBOutlet weak var gouhi: UILabel!
@@ -23,7 +23,6 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
     
     @IBOutlet weak var flower: UIImageView!
     
-    @IBOutlet weak var bannerView: GADBannerView!
     var twiwpm:Double = 0
     var audioPlayer: AVAudioPlayer!
     var lpmNum:Double = 0
@@ -37,18 +36,6 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
     let flowers = ["花5", "花3", "花1"]
     var interstitial: GADInterstitial!
     
-    func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-      interstitial.delegate = self
-      interstitial.load(GADRequest())
-      return interstitial
-    }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-      interstitial = createAndLoadInterstitial()
-      self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-     
-    }
     
     func music(sound: String) {
         let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
@@ -72,10 +59,6 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interstitial = createAndLoadInterstitial()
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
         
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         // Do any additional setup after loading the view.
@@ -89,14 +72,9 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
     
     @IBAction func goHome(_ sender: Any) {
         music(sound: "button")
-        if interstitial.isReady {
-                        interstitial.present(fromRootViewController: self)
-                      } else {
-                        print("Ad wasn't ready")
-                        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
                    
-                      }
-      
     }
     
     @IBAction func twitter(_ sender: Any) {

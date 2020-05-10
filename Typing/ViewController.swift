@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import AudioToolbox
 import AVFoundation
 
@@ -23,7 +22,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var retry: UIButton!
     @IBOutlet weak var shiji: UILabel!
     @IBOutlet weak var flower: UIImageView!
-    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var jouro: UIImageView!
     @IBOutlet weak var counting: UILabel!
     @IBOutlet weak var personLabel: UILabel!
@@ -110,9 +108,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
          super.viewDidLoad()
          // Do any additional setup after loading the view.
-         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-         bannerView.rootViewController = self
-         bannerView.load(GADRequest())
         
          self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
          flower.image = UIImage(named: "花1")
@@ -355,11 +350,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                  SaveData(hairetsu:record,sort:kind[choice])
                  
                  expPoint =  userDefaults.object(forKey: "expPoint") as! Int
-                 if choice == 0 {
                  expPoint += 1
-                 }else{
-                  expPoint += 2
-                 }
+                
                  
                  SaveExp(point: expPoint)
                  

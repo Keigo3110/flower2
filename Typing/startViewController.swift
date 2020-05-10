@@ -15,6 +15,7 @@ class start: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var flower: UIImageView!
     @IBOutlet weak var happa: UIImageView!
     @IBOutlet weak var Button: UIButton!
+    @IBOutlet weak var Label: UILabel!
     var audioPlayer: AVAudioPlayer!
     
     
@@ -43,7 +44,7 @@ class start: UIViewController, AVAudioPlayerDelegate {
         happa.image = UIImage(named:"葉っぱ")
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
         
-       
+       flash()
 
         // Do any additional setup after loading the view.
         
@@ -52,6 +53,14 @@ class start: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func start(_ sender: Any) {
         music(sound: "button")
+    }
+    
+    func flash(){
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: .repeat, animations: {
+            self.Label.alpha = 0.0
+        }, completion: {(_) in
+            self.Label.alpha = 1.0
+        })
     }
     
 
