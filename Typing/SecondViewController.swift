@@ -27,6 +27,7 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
     @IBOutlet weak var Twitter: UIButton!
     @IBOutlet weak var bannerView: GADBannerView!
 
+    @IBOutlet weak var line: UIButton!
     
     
     var twiwpm:Double = 0
@@ -151,4 +152,41 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+    @IBAction func line(_ sender: Any) {
+        
+        let urlscheme: String = "https://line.me/R/msg/text"
+        let message = "あなたのフリック速度は1分間に\( twiwpm)文字です！\nhttps://lemonsmash.studio.design/members\n#flower"
+
+        // line:/msg/text/(メッセージ)
+        let urlstring = urlscheme + "/" + message
+
+        // URLエンコード
+        guard let  encodedURL = urlstring.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+          return
+        }
+
+        // URL作成
+        guard let url = URL(string: encodedURL) else {
+          return
+        }
+
+        if UIApplication.shared.canOpenURL(url) {
+          if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: { (succes) in
+              //  LINEアプリ表示成功
+            })
+          }else{
+            UIApplication.shared.openURL(url)
+          }
+        }
+//            else {
+//          // LINEアプリが無い場合
+//          let alertController = UIAlertController(title: "エラー",
+//                                                  message: "LINEがインストールされていません",
+//                                                  preferredStyle: UIAlertControllerStyle.alert)
+//          alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
+//          present(alertController,animated: true,completion: nil)
+//        }
+    }
+    
 }

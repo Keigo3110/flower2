@@ -12,6 +12,7 @@ import AVFoundation
 
 class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegate{
     
+    @IBOutlet weak var line: UIButton!
     @IBOutlet weak var gouhi: UILabel!
     @IBOutlet weak var comment: UILabel!
     @IBOutlet weak var lpmLabel: UILabel!
@@ -99,11 +100,39 @@ class TryResult: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegat
     }
     
     @IBAction func twitter(_ sender: Any) {
-        let text = "あなたのフリックは1分間に\( lpmNum)文字、段位は\(rankName[new])です！\nhttps://lemonsmash.studio.design/members\n#flower"
+        let text = "あなたのフリックは1分間に\( lpmNum)文字、段位は\(rankName[new])です！！\nhttps://lemonsmash.studio.design/members\n#flower"
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let encodedText = encodedText,
             let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+
+    @IBAction func line(_ sender: Any) {
+        let urlscheme: String = "https://line.me/R/msg/text"
+        let message = "あなたのフリック速度は1分間に\( twiwpm)文字、段位は\(rankName[new])です！！\nhttps://lemonsmash.studio.design/members\n#flower"
+
+        // line:/msg/text/(メッセージ)
+        let urlstring = urlscheme + "/" + message
+
+        // URLエンコード
+        guard let  encodedURL = urlstring.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+          return
+        }
+
+        // URL作成
+        guard let url = URL(string: encodedURL) else {
+          return
+        }
+
+        if UIApplication.shared.canOpenURL(url) {
+          if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: { (succes) in
+              //  LINEアプリ表示成功
+            })
+          }else{
+            UIApplication.shared.openURL(url)
+          }
         }
     }
     

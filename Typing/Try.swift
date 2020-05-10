@@ -13,6 +13,8 @@ import AudioToolbox
 
 class Try: UIViewController, AVAudioPlayerDelegate {
     
+
+    @IBOutlet weak var personname: UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var question2: UILabel!
@@ -75,6 +77,9 @@ class Try: UIViewController, AVAudioPlayerDelegate {
         var audioError:NSError?
            do {
                bgmPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+               bgmPlayer?.numberOfLoops = -1
+               bgmPlayer?.prepareToPlay()
+               bgmPlayer?.play()
            } catch let error as NSError {
                audioError = error
                bgmPlayer = nil
@@ -82,9 +87,6 @@ class Try: UIViewController, AVAudioPlayerDelegate {
            if let error = audioError {
                           print("Error")
                       }
-           bgmPlayer.delegate = self
-                      bgmPlayer.prepareToPlay()
-        bgmPlayer.play()
     }
     func shortVibrate() {
         AudioServicesPlaySystemSound(1003);
@@ -108,6 +110,7 @@ class Try: UIViewController, AVAudioPlayerDelegate {
         
         
         Random()
+        personname.text = person
         question2.text = question
         ansLabel.text = ans1
         userDefaults3.register(defaults: ["rankNum2" : 0])
@@ -190,6 +193,7 @@ class Try: UIViewController, AVAudioPlayerDelegate {
             changeFlowers(index: quesCount2)
             counting.text = "\(quesCount2+1)/10"
             Random()
+            personname.text = person
             question2.text = question
             ansLabel.text = ans1
         }else if field.text! == ans1.prefix(field.text!.count){
