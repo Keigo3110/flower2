@@ -118,7 +118,7 @@ class Try: UIViewController, AVAudioPlayerDelegate {
         SaveRankNum2(num: rankNum2)
         
         rankNum2 = userDefaults3.object(forKey: "rankNum2") as! Int
-        counting.text = "\(quesCount2+1)/10"
+        counting.text = "\(quesCount2+1)/5"
         
     }
     
@@ -184,14 +184,14 @@ class Try: UIViewController, AVAudioPlayerDelegate {
     }
     
     func judge2(){
-        if quesCount2<9{
+        if quesCount2<4{
         if field.text! == ans1{
             music(sound: "パッ")
             field.text = ""
             quesCount2 += 1
             letterCount2 += ans1.count
             changeFlowers(index: quesCount2)
-            counting.text = "\(quesCount2+1)/10"
+            counting.text = "\(quesCount2+1)/5"
             Random()
             personname.text = person
             question2.text = question
@@ -306,15 +306,15 @@ class Try: UIViewController, AVAudioPlayerDelegate {
     }
     
     func changeFlowers(index: Int) {
-        if index >= 3 {
+        if index >= 1 {
             flower.image = UIImage(named: "花2")
             flowers = 1
         }
-        if index >= 5 {
+        if index >= 2 {
             flower.image = UIImage(named: "花3")
             flowers = 2
         }
-        if index >= 7 {
+        if index >= 3 {
             flower.image = UIImage(named: "花4")
             flowers = 3
         }
@@ -383,10 +383,10 @@ class Try: UIViewController, AVAudioPlayerDelegate {
 
 
               case 8:
-              question = "壁というのは、できる人にしかやってこない"
-              ans1 = "かべというのは、できるひとにしかやってこない"
-              ans2 = "かへべというのは、てできるひとにしかやつってこない"
-              person = "イチロー"
+              question = "負ける人のおかげで勝てるんだよな"
+              ans1 = "まけるひとのおかげでかてるんだよな"
+              ans2 = "まけるひとのおかけげてでかてるんただよな"
+              person = "相田みつを"
               break
 
 
@@ -433,10 +433,10 @@ class Try: UIViewController, AVAudioPlayerDelegate {
               break
 
               case 14:
-              question = "康介さんを手ぶらで返すわけにはいかない"
-              ans1 = "こうすけさんをてぶらでかえすわけにはいかない"
-              ans2 = "こうすけさんをてふぶらてでかえすわけにはいかない"
-              person = "松田丈志"
+              question = "慢心は人間の最大の敵だ"
+              ans1 = "まんしんはにんげんのさいだいのてきだ"
+              ans2 = "まんしんはにんけげんのさいただいのてきただ"
+              person = "シェイクスピア"
               break
 
 

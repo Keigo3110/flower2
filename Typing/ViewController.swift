@@ -15,8 +15,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     
     @IBOutlet weak var field: UITextField!
-    @IBOutlet weak var good: UILabel!
-    @IBOutlet weak var coun: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var ansLabel: UILabel!
     @IBOutlet weak var backHome: UIButton!
@@ -97,7 +95,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                           print("Error")
                       }
            bgmPlayer.delegate = self
-                      bgmPlayer.prepareToPlay()
+            bgmPlayer.prepareToPlay()
         bgmPlayer.play()
     }
     
@@ -119,7 +117,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
          shiji.text = "タップしてスタート"
          shiji.isHidden = false
          Random()
-         aaa()
          count = 0
          questionLabel.text = question
          ansLabel.text = ans1
@@ -231,11 +228,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
          
          
      }
-     
-     func aaa(){
-         coun.text = String(count)
-     }
-     
+
      func pauseLayer(layer: CALayer) {
       let pausedTime: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil)
          layer.speed = 0.0
@@ -355,11 +348,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                  SaveData(hairetsu:record,sort:kind[choice])
                  
                  expPoint =  userDefaults.object(forKey: "expPoint") as! Int
-                 if choice == 0 {
-                 expPoint += 1
-                 }else{
-                  expPoint += 2
-                 }
+                if expPoint <= 949{
+                    expPoint += 1
+                }
+                 
+                 
                  
                  SaveExp(point: expPoint)
                  
@@ -390,13 +383,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
          
                      if field.text!.suffix(1) == ans2.prefix(1){
                          ans2 = String(ans2.suffix(ans2.count - 1))
-                         good.text = ans2
                          abc = true
                          }
                          
                      else if abc == true && field.text!.suffix(1) != ans2.prefix(1){
                          count += 1
-                         aaa()
                          abc = false
                          shortVibrate()
                          
@@ -407,7 +398,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                      abc = false
                      count += 1
                      shortVibrate()
-                     aaa()
              }else if field.text!.suffix(1) == ans2{
                  abc = true
                  }
@@ -605,7 +595,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                    case 22:
                        question = "格付け"
                        ans1 = "かくづけ"
-                       ans2 = "かくつづけ"
+                       ans2 = "かくつっづけ"
                        
                        break
                    case 23:
@@ -832,7 +822,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
               case 62:
                 question = "スウェット"
                 ans1 = "すうぇっと"
-                ans2 = "すうぅえぇつっと"
+                ans2 = "すうえぇつっと"
                 
                 break
               case 63:
@@ -1111,11 +1101,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
 
 
-                    case 8:
-                    question = "壁というのは、できる人にしかやってこない"
-                    ans1 = "かべというのは、できるひとにしかやってこない"
-                    ans2 = "かへべというのは、てできるひとにしかやつってこない"
-                    person = "イチロー"
+                   case 8:
+                   question = "負ける人のおかげで勝てるんだよな"
+                   ans1 = "まけるひとのおかげでかてるんだよな"
+                   ans2 = "まけるひとのおかけげてでかてるんただよな"
+                   person = "相田みつを"
                     break
 
 
@@ -1162,10 +1152,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     break
 
                     case 14:
-                    question = "康介さんを手ぶらで返すわけにはいかない"
-                    ans1 = "こうすけさんをてぶらでかえすわけにはいかない"
-                    ans2 = "こうすけさんをてふぶらてでかえすわけにはいかない"
-                    person = "松田丈志"
+                    question = "慢心は人間の最大の敵だ"
+                    ans1 = "まんしんはにんげんのさいだいのてきだ"
+                    ans2 = "まんしんはにんけげんのさいただいのてきただ"
+                    person = "シェイクスピア"
                     break
 
 

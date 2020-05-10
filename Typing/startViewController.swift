@@ -17,6 +17,7 @@ class start: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var Button: UIButton!
     var audioPlayer: AVAudioPlayer!
     
+    @IBOutlet weak var tapstart: UILabel!
     
     func music(sound: String) {
         let audioPath = Bundle.main.path(forResource: sound, ofType:"mp3")!
@@ -39,6 +40,7 @@ class start: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        flash()
         flower.image = UIImage(named: "花5")
         happa.image = UIImage(named:"葉っぱ")
         self.view.backgroundColor = UIColor(red: 245/255.0, green: 251/255.0, blue: 241/255.0, alpha: 1.0)
@@ -54,6 +56,11 @@ class start: UIViewController, AVAudioPlayerDelegate {
         music(sound: "button")
     }
     
-
-
+    func flash() {
+        UIView.animate(withDuration: 2.0, delay: 0.0, options: .repeat, animations: {
+            self.tapstart.alpha = 0.0
+        }, completion: { (_) in
+            self.tapstart.alpha = 1.0
+        })
+    }
 }

@@ -13,7 +13,6 @@ import AVFoundation
 class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPlayerDelegate{
     
     @IBOutlet weak var mis: UILabel!
-    @IBOutlet weak var usedTime: UILabel!
     @IBOutlet weak var rrrecord: UILabel!
     @IBOutlet weak var rrrecord2: UILabel!
     @IBOutlet weak var rrrecord3: UILabel!
@@ -91,7 +90,6 @@ class SecondViewController: UIViewController, GADInterstitialDelegate, AVAudioPl
 
         // Do any additional setup after loading the view.
         mis.text = misss
-        usedTime.text = String(usedTimee)
         rrrecord.text = String(rrrecorddd[0])
         rrrecord2.text = String(rrrecorddd[1])
         rrrecord3.text = String(rrrecorddd[2])
