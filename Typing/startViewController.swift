@@ -47,11 +47,19 @@ class start: UIViewController, AVAudioPlayerDelegate {
 
         // Do any additional setup after loading the view.
         
-        
+        flash()
     }
     
     @IBAction func start(_ sender: Any) {
         music(sound: "button")
+    }
+    
+    func flash(){
+        UIView.animateKeyframes(withDuration: 2.0, delay: 0.0, options: .repeat, animations: {
+            self.Button.alpha = 0.0
+        }, completion: {(_) in
+            self.Button.alpha = 1.0
+            })
     }
     
 

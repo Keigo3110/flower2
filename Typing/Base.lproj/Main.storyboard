@@ -68,7 +68,6 @@
                         <outlet property="Button" destination="EVz-W0-yV9" id="wE8-Dr-xAe"/>
                         <outlet property="flower" destination="TLD-Bl-qaY" id="bTh-KA-C3I"/>
                         <outlet property="happa" destination="7vn-z4-4hj" id="XDa-zg-iel"/>
-                        <outlet property="label" destination="EVz-W0-yV9" id="3RP-6j-Rbp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1f-Zw-Fsm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
